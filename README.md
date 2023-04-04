@@ -1,1 +1,1 @@
-# pizzashop-starter
+# pizzashop
