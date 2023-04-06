@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .btn {
+    @apply bg-orange-100 rounded-xl text-orange-700 font-medium;
+  }
+  .btn-sm {
+    @apply py-3 px-6;
+  }
+}
