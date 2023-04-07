@@ -14,7 +14,7 @@ const Pizza = () => {
           src={'/vegetarian.webp'}
           alt=''
           priority={'lazy'}
-          className='group-hover:translate-y-3 transition-all duration-300 mb-12'
+          className='group-hover:translate-y-3 transition-all duration-300 mb-8'
         />
       </Link>
       {/* title */}
