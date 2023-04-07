@@ -28,21 +28,23 @@ const Pizza = () => {
       </div>
       {/* price & btn */}
       <div className='mb-6 flex items-center justify-between'>
-        {/* price -> hidden (sm) - visible (md) */}
-        <div className='hidden md:flex text-xl font-semibold'>$ 9.99</div>
-        {/* btn -> hidden (sm) - visible (md) */}
+        {/* price -> hidden (sm) - visible (lg) */}
+        <div className='hidden lg:flex text-xl font-semibold'>
+          starts at $9.99
+        </div>
+        {/* btn -> hidden (sm) - visible (lg) */}
         <button
           onClick={() => console.log(20)}
-          className='hidden md:flex btn btn-primary btn-sm'
+          className='hidden lg:flex btn btn-primary btn-sm'
         >
           Choose
         </button>
-        {/* btn -> visible (sm) - hidden (md) */}
+        {/* btn -> visible (sm) - hidden (lg) */}
         <button
           onClick={() => console.log(20)}
-          className='btn btn-primary btn-sm md:hidden'
+          className='btn btn-primary btn-sm lg:hidden px-5'
         >
-          $ 9.99
+          starts at $9.99
         </button>
       </div>
     </div>
