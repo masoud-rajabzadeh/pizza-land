@@ -4,9 +4,12 @@
 
 @layer base {
   .btn {
-    @apply bg-orange-100 rounded-xl text-orange-700 font-medium;
+    @apply rounded-xl font-semibold transition-all;
   }
   .btn-sm {
     @apply py-3 px-6;
+  }
+  .btn-primary {
+    @apply bg-orange-100 text-orange-600 hover:bg-orange-200;
   }
 }
