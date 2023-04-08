@@ -22,8 +22,11 @@ const modalStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    width: '80vw',
+    width: '85vw',
+    height: 'auto',
     maxWidth: '900px',
+    borderRadius: '30px',
+    padding: '3rem',
   },
 };
 
@@ -90,15 +93,26 @@ const Pizza = () => {
         onRequestClose={closeModal}
         contentLabel='Pizza Modal'
       >
-        <h2>Modal</h2>
-        <Image
-          width={270}
-          height={270}
-          src={'/vegetarian.webp'}
-          alt=''
-          // priority={1}
-          className='group-hover:translate-y-3 transition-all duration-300 mb-8'
-        />
+        <div className='flex flex-col lg:flex-row'>
+          <div className='flex-1 bg-blue-100 flex justify-center items-center'>
+            {/* pizza image */}
+            <Image
+              width={450}
+              height={450}
+              src={'/vegetarian.webp'}
+              alt=''
+              // priority={1}
+              className='group-hover:translate-y-3 transition-all duration-300 mb-8 mx-auto lg:mb-0'
+            />
+          </div>
+          {/* pizza info */}
+          <div className='flex-1 bg-pink-200'>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error
+            incidunt facilis nemo maxime quos, aperiam eius repellendus
+            distinctio, fugit aliquid quidem porro rerum voluptatem quae hic,
+            ipsam ut sequi ea.
+          </div>
+        </div>
       </Modal>
     </div>
   );
