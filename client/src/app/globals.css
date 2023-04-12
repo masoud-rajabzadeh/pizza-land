@@ -10,6 +10,6 @@
     @apply py-3 px-6;
   }
   .btn-primary {
-    @apply bg-orange-100 text-orange-600 hover:bg-orange-200;
+    @apply bg-red-500 text-white hover:bg-red-400;
   }
 }
