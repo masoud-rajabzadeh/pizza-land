@@ -1,10 +1,10 @@
 'use client';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 // image
 import Image from 'next/image';
 // modal
 import Modal from 'react-modal';
-import Size from './Size';
+import PizzaDetails from './PizzaDetails';
 
 // bind modal to #pizza
 Modal.setAppElement('#pizza');
@@ -21,7 +21,8 @@ const modalStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    width: '85vw',
+    width: '92vw',
+    height: '64vh',
     minHeight: '580px',
     maxWidth: '900px',
     borderRadius: '30px',
@@ -81,63 +82,22 @@ const Pizza = ({ pizza }) => {
         {/* btn -> visible (sm) - hidden (lg) */}
         <button
           onClick={openModal}
-          className='btn btn-primary btn-sm lg:hidden px-5'
+          className='btn btn-primary btn-sm lg:hidden px-3'
         >
           starts at $9.99
         </button>
       </div>
       {/* modal */}
-      <Modal
-        isOpen={modal}
-        style={modalStyles}
-        onRequestClose={closeModal}
-        contentLabel='Pizza Modal'
-      >
-        <div className='flex flex-col lg:flex-row lg:gap-x-6 min-h-[480px]'>
-          <div className='flex-1 flex justify-center items-center'>
-            {/* pizza image */}
-            <Image
-              width={450}
-              height={450}
-              src={pizza.image}
-              alt=''
-              priority={1}
-              className='group-hover:translate-y-3 transition-all duration-300 mb-8 mx-auto lg:mb-0'
-            />
-          </div>
-          {/* pizza info */}
-          <div className='flex-1'>
-            <div className='mb-8 font-semibold'>
-              <h2 className='capitalize text-2xl'>Pizza {pizza.name}</h2>
-            </div>
-            {/* size */}
-            <Size pizza={pizza} id={pizza.id} />
-            {/* topping list */}
-            <div className='flex flex-wrap gap-3'>
-              {pizza.toppings?.map((topping, index) => {
-                return (
-                  // topping item
-                  <div
-                    className='w-[100px] p-2 flex flex-col items-center rounded-md bg-white shadow-2xl'
-                    key={index}
-                  >
-                    <Image
-                      width={90}
-                      height={90}
-                      src={topping.image}
-                      className='mb-2'
-                      alt=''
-                    />
-                    <div className='text-[12px] capitalize font-medium text-center'>
-                      {topping.name}
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>
-      </Modal>
+      {modal && (
+        <Modal
+          isOpen={modal}
+          style={modalStyles}
+          onRequestClose={closeModal}
+          contentLabel='Pizza Modal'
+        >
+          <PizzaDetails pizza={pizza} />
+        </Modal>
+      )}
     </div>
   );
 };
