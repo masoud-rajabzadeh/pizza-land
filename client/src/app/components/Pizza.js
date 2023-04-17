@@ -4,7 +4,10 @@ import { useState } from 'react';
 import Image from 'next/image';
 // modal
 import Modal from 'react-modal';
+// components
 import PizzaDetails from './PizzaDetails';
+// icons
+import { IoCloseOutline } from 'react-icons/io5';
 
 // bind modal to #pizza
 Modal.setAppElement('#pizza');
@@ -14,17 +17,6 @@ const modalStyles = {
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
-  // content: {
-  //   top: '50%',
-  //   left: '50%',
-  //   right: 'auto',
-  //   bottom: 'auto',
-  //   marginRight: '-50%',
-  //   transform: 'translate(-50%, -50%)',
-  //   width: '100vw',
-  //   maxWidth: '900px',
-  //   // borderRadius: '30px',
-  // },
 };
 
 const Pizza = ({ pizza }) => {
@@ -94,6 +86,13 @@ const Pizza = ({ pizza }) => {
           onRequestClose={closeModal}
           contentLabel='Pizza Modal'
         >
+          {/* close modal icon */}
+          <div
+            className='absolute z-30 right-4 top-2 text-2xl cursor-pointer'
+            onClick={closeModal}
+          >
+            <IoCloseOutline className='text-4xl text-red-400' />
+          </div>
           <PizzaDetails pizza={pizza} />
         </Modal>
       )}

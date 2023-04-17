@@ -8,7 +8,7 @@ import CrustSelection from './CrustSelection';
 const PizzaDetails = ({ pizza }) => {
   const [size, setSize] = useState('small');
   const [crust, setCrust] = useState('traditional');
-
+  console.log(pizza);
   return (
     <div className='flex flex-col lg:flex-row lg:gap-x-12 h-full md:p-12'>
       <div className='lg:flex-1 flex justify-center items-center'>
@@ -77,7 +77,20 @@ const PizzaDetails = ({ pizza }) => {
           </div>
         </div>
         <div className='h-full flex items-center px-2 lg:items-end'>
-          <button className='btn btn-lg btn-primary w-full'>btn</button>
+          <button className='btn btn-lg btn-primary w-full flex justify-center gap-x-2 text-[20px] font-semibold'>
+            <div>Add to cart for</div>
+            <div>
+              {`${
+                size === 'small'
+                  ? pizza.priceSm
+                  : size === 'medium'
+                  ? pizza.priceMd
+                  : size === 'large'
+                  ? pizza.priceLg
+                  : null
+              }`}
+            </div>
+          </button>
         </div>
       </div>
     </div>

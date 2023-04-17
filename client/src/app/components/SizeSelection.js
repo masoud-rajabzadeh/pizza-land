@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const SizeSelection = ({ pizza, size, setSize }) => {
   return (
-    <div>
+    <div className='mx-auto max-w-sm lg:max-w-none flex items-center justify-center lg:justify-start'>
       {/* sizes */}
       <div className='flex gap-x-12 items-center mb-6'>
         <label className='flex flex-col items-center gap-x-2 cursor-pointer'>

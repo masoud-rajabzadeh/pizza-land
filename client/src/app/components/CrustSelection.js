@@ -2,7 +2,7 @@ import React from 'react';
 
 const CrustSelection = ({ crust, setCrust }) => {
   return (
-    <div>
+    <div className='flex justify-center items-center lg:justify-start'>
       {/* crust */}
       <div className='flex gap-x-12 mb-8'>
         <label className='flex items-center gap-x-2 cursor-pointer'>
