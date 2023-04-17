@@ -1,25 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 // image
 import Image from 'next/image';
 
-const Size = ({ pizza }) => {
-  const [size, setSize] = useState('small');
-  const [crust, setCrust] = useState('traditional');
+const SizeSelection = ({ pizza, size, setSize }) => {
   return (
     <div>
-      {/* size & crust */}
-      <div className='mb-6 text-lg font-medium'>
-        <span>
-          {size === 'small'
-            ? '25 cm'
-            : size === 'medium'
-            ? '30 cm'
-            : size === 'large'
-            ? '35 cm'
-            : null}
-        </span>
-        <span>, {crust} crust</span>
-      </div>
       {/* sizes */}
       <div className='flex gap-x-12 items-center mb-6'>
         <label className='flex flex-col items-center gap-x-2 cursor-pointer'>
@@ -89,33 +74,8 @@ const Size = ({ pizza }) => {
           Large
         </label>
       </div>
-      {/* crust */}
-      <div className='flex gap-x-12 mb-12'>
-        <label className='flex items-center gap-x-2 cursor-pointer'>
-          <input
-            type='radio'
-            name='crust'
-            value='traditional'
-            checked={crust === 'traditional'}
-            onChange={(e) => setCrust(e.target.value)}
-            className='h-4 w-4 rounded-full border border-red-500 appearance-none checked:bg-red-500 checked:border-transparent'
-          />
-          Traditional
-        </label>
-        <label className='flex items-center gap-x-2 cursor-pointer'>
-          <input
-            type='radio'
-            name='crust'
-            value='thin'
-            checked={crust === 'thin'}
-            onChange={(e) => setCrust(e.target.value)}
-            className='h-4 w-4 rounded-full border border-red-500 appearance-none checked:bg-red-500 checked:border-transparent'
-          />
-          Thin
-        </label>
-      </div>
     </div>
   );
 };
 
-export default Size;
+export default SizeSelection;

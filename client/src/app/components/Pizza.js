@@ -14,20 +14,17 @@ const modalStyles = {
   overlay: {
     backgroundColor: 'rgba(0, 0, 0, 0.5)',
   },
-  content: {
-    top: '50%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    width: '92vw',
-    height: '64vh',
-    minHeight: '580px',
-    maxWidth: '900px',
-    borderRadius: '30px',
-    padding: '3rem',
-  },
+  // content: {
+  //   top: '50%',
+  //   left: '50%',
+  //   right: 'auto',
+  //   bottom: 'auto',
+  //   marginRight: '-50%',
+  //   transform: 'translate(-50%, -50%)',
+  //   width: '100vw',
+  //   maxWidth: '900px',
+  //   // borderRadius: '30px',
+  // },
 };
 
 const Pizza = ({ pizza }) => {
@@ -55,7 +52,6 @@ const Pizza = ({ pizza }) => {
         priority={1}
         className='group-hover:translate-y-3 transition-all duration-300 mb-8 cursor-pointer'
       />
-
       {/* title */}
       <div onClick={openModal}>
         <div className='text-xl font-semibold mb-3 capitalize cursor-pointer'>
@@ -90,6 +86,9 @@ const Pizza = ({ pizza }) => {
       {/* modal */}
       {modal && (
         <Modal
+          className={
+            'bg-white w-full h-full lg:max-w-[900px] lg:max-h-[600px] lg:rounded-[30px] lg:fixed lg:top-[50%] lg:left-[50%] lg:translate-x-[-50%] lg:translate-y-[-50%] outline-none'
+          }
           isOpen={modal}
           style={modalStyles}
           onRequestClose={closeModal}
