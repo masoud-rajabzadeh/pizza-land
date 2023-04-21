@@ -15,6 +15,18 @@ const PizzaDetails = ({ pizza }) => {
   const [additionalTopping, setAdditionalTopping] = useState([]);
   // additional topping price state
   const [additionalToppingPrice, setAdditionalToppingPrice] = useState(0);
+  // total price
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    size === 'small'
+      ? setTotal(parseFloat(pizza.priceSm + additionalToppingPrice).toFixed(2))
+      : size === 'medium'
+      ? setTotal(parseFloat(pizza.priceMd + additionalToppingPrice).toFixed(2))
+      : size === 'large'
+      ? setTotal(parseFloat(pizza.priceLg + additionalToppingPrice).toFixed(2))
+      : null;
+  });
 
   useEffect(() => {
     if (additionalTopping.length > 0) {
@@ -28,7 +40,7 @@ const PizzaDetails = ({ pizza }) => {
   }, [additionalTopping]);
 
   return (
-    <div className='flex flex-col lg:flex-row lg:gap-x-12 h-full md:p-12'>
+    <div className='flex flex-col lg:flex-row lg:gap-x-8 h-full md:p-8'>
       <div className='lg:flex-1 flex justify-center items-center'>
         {/* pizza image */}
         <div className='max-w-[300px] lg:max-w-none'>
@@ -92,19 +104,12 @@ const PizzaDetails = ({ pizza }) => {
           </div>
         </div>
         <div className='h-full flex items-center px-2 lg:items-end'>
-          <button className='btn btn-lg btn-primary w-full flex justify-center gap-x-2 text-[20px] font-semibold'>
+          <button
+            onClick={() => console.log(total, additionalTopping, size, crust)}
+            className='btn btn-lg btn-primary w-full flex justify-center gap-x-2 text-[20px] font-semibold'
+          >
             <div>Add to cart for</div>
-            <div>
-              {' '}
-              $
-              {size === 'small'
-                ? parseFloat(pizza.priceSm + additionalToppingPrice).toFixed(2)
-                : size === 'medium'
-                ? parseFloat(pizza.priceMd + additionalToppingPrice).toFixed(2)
-                : size === 'large'
-                ? parseFloat(pizza.priceLg + additionalToppingPrice).toFixed(2)
-                : null}
-            </div>
+            <div>$ {total}</div>
           </button>
         </div>
       </div>
