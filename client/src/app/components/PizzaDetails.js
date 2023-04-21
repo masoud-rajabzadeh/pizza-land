@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 // image
 import Image from 'next/image';
 // import components
@@ -11,10 +11,22 @@ const PizzaDetails = ({ pizza }) => {
   const [size, setSize] = useState('small');
   // pizza crust state
   const [crust, setCrust] = useState('traditional');
-  // toppings state
-  const [additionalToppings, setAdditionalToppings] = useState([]);
+  // additional topping state
+  const [additionalTopping, setAdditionalTopping] = useState([]);
+  // additional topping price state
+  const [additionalToppingPrice, setAdditionalToppingPrice] = useState(0);
 
-  console.log(additionalToppings);
+  useEffect(() => {
+    if (additionalTopping.length > 0) {
+      const toppingPrice = additionalTopping.reduce((a, c) => {
+        return a + c.price;
+      }, 0);
+      setAdditionalToppingPrice(toppingPrice);
+    } else {
+      setAdditionalToppingPrice(0);
+    }
+  }, [additionalTopping]);
+
   return (
     <div className='flex flex-col lg:flex-row lg:gap-x-12 h-full md:p-12'>
       <div className='lg:flex-1 flex justify-center items-center'>
@@ -71,8 +83,8 @@ const PizzaDetails = ({ pizza }) => {
                   <Topping
                     topping={topping}
                     key={index}
-                    additionalToppings={additionalToppings}
-                    setAdditionalToppings={setAdditionalToppings}
+                    additionalTopping={additionalTopping}
+                    setAdditionalTopping={setAdditionalTopping}
                   />
                 );
               })}
@@ -83,15 +95,15 @@ const PizzaDetails = ({ pizza }) => {
           <button className='btn btn-lg btn-primary w-full flex justify-center gap-x-2 text-[20px] font-semibold'>
             <div>Add to cart for</div>
             <div>
-              {`${
-                size === 'small'
-                  ? pizza.priceSm
-                  : size === 'medium'
-                  ? pizza.priceMd
-                  : size === 'large'
-                  ? pizza.priceLg
-                  : null
-              }`}
+              {' '}
+              $
+              {size === 'small'
+                ? parseFloat(pizza.priceSm + additionalToppingPrice).toFixed(2)
+                : size === 'medium'
+                ? parseFloat(pizza.priceMd + additionalToppingPrice).toFixed(2)
+                : size === 'large'
+                ? parseFloat(pizza.priceLg + additionalToppingPrice).toFixed(2)
+                : null}
             </div>
           </button>
         </div>

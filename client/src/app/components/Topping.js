@@ -4,7 +4,7 @@ import Image from 'next/image';
 // icons
 import { IoMdCheckmark } from 'react-icons/io';
 
-const Topping = ({ topping, additionalToppings, setAdditionalToppings }) => {
+const Topping = ({ topping, additionalTopping, setAdditionalTopping }) => {
   // checkbox state
   const [isChecked, setIsChecked] = useState(false);
 
@@ -15,17 +15,14 @@ const Topping = ({ topping, additionalToppings, setAdditionalToppings }) => {
   const handleTopping = () => {
     if (isChecked) {
       // use set to ensure unique values
-      const newToppings = new Set([
-        ...additionalToppings,
-        { name: topping.name },
-      ]);
-      setAdditionalToppings(Array.from(newToppings));
+      const newToppings = new Set([...additionalTopping, { ...topping }]);
+      setAdditionalTopping(Array.from(newToppings));
     } else {
       // remove the topping with the matching name
-      const newToppings = additionalToppings.filter((toppingObj) => {
+      const newToppings = additionalTopping.filter((toppingObj) => {
         return toppingObj.name !== topping.name;
       });
-      setAdditionalToppings(newToppings);
+      setAdditionalTopping(newToppings);
     }
   };
 
@@ -55,7 +52,7 @@ const Topping = ({ topping, additionalToppings, setAdditionalToppings }) => {
           isChecked ? 'opacity-100' : 'opacity-0'
         } absolute right-3`}
       >
-        <IoMdCheckmark className='text-2xl text-red-500' />
+        <IoMdCheckmark className='text-xl text-red-500' />
       </div>
     </div>
   );
