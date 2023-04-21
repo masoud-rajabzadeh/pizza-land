@@ -4,11 +4,16 @@ import Image from 'next/image';
 // import components
 import SizeSelection from './SizeSelection';
 import CrustSelection from './CrustSelection';
+import Topping from './Topping';
 
 const PizzaDetails = ({ pizza }) => {
+  // pizza size state
   const [size, setSize] = useState('small');
+  // pizza crust state
   const [crust, setCrust] = useState('traditional');
-  console.log(pizza);
+  // toppings state
+  const [additionalToppings, setAdditionalToppings] = useState([]);
+  console.log(additionalToppings);
   return (
     <div className='flex flex-col lg:flex-row lg:gap-x-12 h-full md:p-12'>
       <div className='lg:flex-1 flex justify-center items-center'>
@@ -27,7 +32,7 @@ const PizzaDetails = ({ pizza }) => {
       {/* pizza details */}
       <div className='flex flex-col flex-1'>
         <div className='flex-1 p-2 text-center lg:text-left'>
-          <div className='flex-1 overflow-y-scroll h-[46vh] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-white-500'>
+          <div className='flex-1 overflow-y-scroll h-[46vh] scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white-500 pr-2'>
             {/* name */}
             <div className='font-semibold'>
               {/* name */}
@@ -62,15 +67,12 @@ const PizzaDetails = ({ pizza }) => {
               {pizza.toppings?.map((topping, index) => {
                 return (
                   // topping item
-                  <div
-                    className='w-full h-20 p-2 flex items-center justify-between rounded-md bg-white border pr-12'
+                  <Topping
+                    topping={topping}
                     key={index}
-                  >
-                    <Image width={70} height={70} src={topping.image} alt='' />
-                    <div className='text-md capitalize font-medium text-center'>
-                      {topping.name}
-                    </div>
-                  </div>
+                    additionalToppings={additionalToppings}
+                    setAdditionalToppings={setAdditionalToppings}
+                  />
                 );
               })}
             </div>
