@@ -15,7 +15,7 @@ const PizzaDetails = ({ pizza }) => {
   const [additionalTopping, setAdditionalTopping] = useState([]);
   // additional topping price state
   const [additionalToppingPrice, setAdditionalToppingPrice] = useState(0);
-  // total price
+  // total price state
   const [total, setTotal] = useState(0);
 
   useEffect(() => {
@@ -105,7 +105,14 @@ const PizzaDetails = ({ pizza }) => {
         </div>
         <div className='h-full flex items-center px-2 lg:items-end'>
           <button
-            onClick={() => console.log(total, additionalTopping, size, crust)}
+            onClick={() =>
+              console.log({
+                total: total,
+                toppings: additionalTopping,
+                pizzaSize: size,
+                crust: crust,
+              })
+            }
             className='btn btn-lg btn-primary w-full flex justify-center gap-x-2 text-[20px] font-semibold'
           >
             <div>Add to cart for</div>
