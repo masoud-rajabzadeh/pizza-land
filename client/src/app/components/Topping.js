@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 // next image
 import Image from 'next/image';
+// icons
+import { IoMdCheckmark } from 'react-icons/io';
 
 const Topping = ({ topping, additionalToppings, setAdditionalToppings }) => {
   // checkbox state
@@ -34,8 +36,8 @@ const Topping = ({ topping, additionalToppings, setAdditionalToppings }) => {
   return (
     <div
       className={`${
-        isChecked && 'border-red-500'
-      } w-full h-20 p-2 flex items-center justify-between rounded-md bg-white border pr-12 relative`}
+        isChecked && 'border-red-400'
+      } w-full h-20 p-2 flex items-center justify-between rounded-md bg-white border pr-12 relative transition-all duration-100`}
     >
       <Image width={70} height={70} src={topping.image} alt='' />
       <div className='text-md capitalize font-medium text-center'>
@@ -47,6 +49,14 @@ const Topping = ({ topping, additionalToppings, setAdditionalToppings }) => {
         checked={isChecked}
         onChange={handleCheckboxChange}
       />
+      {/* checkmark icon */}
+      <div
+        className={`${
+          isChecked ? 'opacity-100' : 'opacity-0'
+        } absolute right-3 transition-all duration-700`}
+      >
+        <IoMdCheckmark className='text-2xl text-red-500' />
+      </div>
     </div>
   );
 };

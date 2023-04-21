@@ -13,6 +13,7 @@ const PizzaDetails = ({ pizza }) => {
   const [crust, setCrust] = useState('traditional');
   // toppings state
   const [additionalToppings, setAdditionalToppings] = useState([]);
+
   console.log(additionalToppings);
   return (
     <div className='flex flex-col lg:flex-row lg:gap-x-12 h-full md:p-12'>
