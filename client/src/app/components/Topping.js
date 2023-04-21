@@ -37,7 +37,7 @@ const Topping = ({ topping, additionalToppings, setAdditionalToppings }) => {
     <div
       className={`${
         isChecked && 'border-red-400'
-      } w-full h-20 p-2 flex items-center justify-between rounded-md bg-white border pr-12 relative transition-all duration-100`}
+      } w-full h-20 p-2 flex items-center justify-between rounded-md bg-white border pr-12 relative`}
     >
       <Image width={70} height={70} src={topping.image} alt='' />
       <div className='text-md capitalize font-medium text-center'>
@@ -53,7 +53,7 @@ const Topping = ({ topping, additionalToppings, setAdditionalToppings }) => {
       <div
         className={`${
           isChecked ? 'opacity-100' : 'opacity-0'
-        } absolute right-3 transition-all duration-700`}
+        } absolute right-3`}
       >
         <IoMdCheckmark className='text-2xl text-red-500' />
       </div>
