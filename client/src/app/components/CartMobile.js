@@ -14,7 +14,7 @@ const CartMobile = () => {
       } fixed w-full h-full left-0 bg-purple-500 transition-all duration-500`}
     >
       {/* close icon */}
-      <div onClick={() => setIsOpen(false)}>
+      <div onClick={() => setIsOpen(false)} className='cursor-pointer'>
         <FaDoorClosed className='text-4xl' />
       </div>
       CartMobile
