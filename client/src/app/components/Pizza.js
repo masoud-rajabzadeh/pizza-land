@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 // image
 import Image from 'next/image';
 // modal
@@ -42,7 +42,7 @@ const Pizza = ({ pizza }) => {
         src={pizza.image}
         alt=''
         priority={1}
-        className='group-hover:translate-y-3 transition-all duration-300 mb-8 cursor-pointer'
+        className='lg:group-hover:translate-y-3 transition-all duration-300 mb-8 cursor-pointer'
       />
       {/* title */}
       <div onClick={openModal}>

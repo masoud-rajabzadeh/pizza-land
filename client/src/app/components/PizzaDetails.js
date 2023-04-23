@@ -50,7 +50,7 @@ const PizzaDetails = ({ pizza }) => {
             src={pizza.image}
             alt=''
             priority={1}
-            className='group-hover:translate-y-3 transition-all duration-300 mx-auto lg:mb-0'
+            className='group-hover:translate-y-3 transition-all duration-300 mx-auto lg:mb-0 relative'
           />
         </div>
       </div>

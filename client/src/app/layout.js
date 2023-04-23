@@ -8,6 +8,9 @@ import { Quicksand } from 'next/font/google';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 
+// provider
+import CartProvider from './context/CartContext';
+
 const quicksand = Quicksand({
   subsets: ['latin'],
   variable: '--font-quicksand',
@@ -15,12 +18,14 @@ const quicksand = Quicksand({
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
-      <body className={`${quicksand.variable} font-quicksand`}>
-        <Nav />
-        {children}
-        <Footer />
-      </body>
-    </html>
+    <CartProvider>
+      <html lang='en'>
+        <body className={`${quicksand.variable} font-quicksand`}>
+          <Nav />
+          {children}
+          <Footer />
+        </body>
+      </html>
+    </CartProvider>
   );
 }
