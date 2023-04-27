@@ -20,7 +20,7 @@
     @apply rounded-xl font-semibold transition-all;
   }
   .btn-primary {
-    @apply bg-red-500 text-white hover:bg-red-400;
+    @apply bg-primary text-white hover:bg-primary/90;
   }
   .btn-sm {
     @apply py-3 px-6;

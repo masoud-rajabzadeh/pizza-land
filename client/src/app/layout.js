@@ -2,7 +2,7 @@
 import './globals.css';
 
 // import font
-import { Bangers, Raleway } from 'next/font/google';
+import { Bangers, Raleway, Roboto_Condensed } from 'next/font/google';
 
 // components
 import Nav from './components/Nav';
@@ -22,12 +22,18 @@ const bangers = Bangers({
   weight: ['400'],
 });
 
+const robotoCondensed = Roboto_Condensed({
+  subsets: ['latin'],
+  variable: '--font-robotoCondensed',
+  weight: ['300', '400', '700'],
+});
+
 export default function RootLayout({ children }) {
   return (
     <CartProvider>
       <html lang='en'>
         <body
-          className={`${raleway.variable} ${bangers.variable} font-raleway`}
+          className={`${raleway.variable} ${bangers.variable} ${robotoCondensed.variable} font-raleway`}
         >
           <Nav />
           {children}

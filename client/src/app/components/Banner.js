@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Banner = () => {
   return (
-    <section className='bg-primary bg-banner-pattern min-h-[768px] py-8 lg:py-0'>
+    <section className='bg-primary bg-banner-pattern min-h-[768px] pt-32 md:pt-32 lg:pt-8'>
       <div className='container mx-auto min-h-[768px] flex'>
         <div className='flex flex-col lg:flex-row items-center text-center lg:text-left'>
           {/* text */}
@@ -14,7 +14,7 @@ const Banner = () => {
               Pizza perfection in every bite
             </h1>
           </div>
-          {/* iamge */}
+          {/* image */}
           <div className='flex-1 flex justify-end'>
             <Image src={'/pizza-banner.png'} width={550} height={558} alt='' />
           </div>

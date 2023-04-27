@@ -22,8 +22,9 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        raleway: [`var(--font-raleway)`, 'sans-serif'],
         bangers: [`var(--font-bangers)`, 'sans-serif'],
+        raleway: [`var(--font-raleway)`, 'sans-serif'],
+        robotoCondensed: [`var(--font-robotoCondensed)`, 'sans-serif'],
       },
       colors: {
         primary: '#D1411E',
