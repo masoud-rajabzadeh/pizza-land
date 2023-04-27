@@ -10,7 +10,7 @@ const Banner = () => {
             <div className='font-bangers text-[32px] text-white uppercase tracking-[0.03em]'>
               Best pizza in town
             </div>
-            <h1 className='text-[94px] leading-none font-bangers text-white drop-shadow-md'>
+            <h1 className='text-8xl font-bangers text-white drop-shadow-md'>
               Pizza perfection in every bite
             </h1>
           </div>
