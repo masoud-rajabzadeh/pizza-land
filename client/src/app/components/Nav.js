@@ -24,7 +24,7 @@ const Nav = () => {
             </div>
           </div>
           {/* cart */}
-          <div className='relative'>
+          <div className='relative cursor-pointer hidden lg:flex'>
             <Image src={'bag.svg'} width={38} height={38} alt='' />
             {/* amount */}
             <div className='w-6 h-6 bg-[#401C14] absolute -bottom-2 -right-1 rounded-full flex justify-center items-center text-white text-[13px] font-robotoCondensed'>

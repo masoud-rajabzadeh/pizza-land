@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 const Banner = () => {
   return (
-    <section className='bg-primary bg-banner-pattern min-h-[768px] pt-32 md:pt-32 lg:pt-8'>
+    <section className='bg-primary bg-banner-pattern min-h-[768px] pt-32 md:pt-32 lg:pt-10'>
       <div className='container mx-auto min-h-[768px] flex'>
         <div className='flex flex-col lg:flex-row items-center text-center lg:text-left'>
           {/* text */}
