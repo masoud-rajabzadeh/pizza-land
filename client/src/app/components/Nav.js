@@ -1,5 +1,5 @@
 const Nav = () => {
-  return <nav className='bg-indigo-300'>Nav</nav>;
+  return <nav className='absolute bg-pink-50'>Nav</nav>;
 };
 
 export default Nav;

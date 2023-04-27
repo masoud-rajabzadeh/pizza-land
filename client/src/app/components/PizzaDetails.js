@@ -88,7 +88,7 @@ const PizzaDetails = ({ pizza }) => {
             {/* toppings */}
             <div className='mb-4 text-xl font-semibold'>Choose topping</div>
             {/* topping list */}
-            <div className='flex flex-wrap gap-2'>
+            <div className='flex flex-1 flex-wrap gap-2 justify-center lg:justify-start'>
               {pizza.toppings?.map((topping, index) => {
                 return (
                   // topping item

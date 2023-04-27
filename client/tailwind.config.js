@@ -23,6 +23,13 @@ module.exports = {
     extend: {
       fontFamily: {
         quicksand: [`var(--font-quicksand)`, 'sans-serif'],
+        bangers: [`var(--font-bangers)`, 'sans-serif'],
+      },
+      colors: {
+        primary: '#D1411E',
+      },
+      backgroundImage: {
+        'banner-pattern': "url('/pattern.png')",
       },
     },
   },

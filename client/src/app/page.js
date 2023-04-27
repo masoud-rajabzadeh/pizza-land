@@ -2,6 +2,7 @@
 import Pizza from './components/Pizza';
 import CartMobileIcon from './components/CartMobileIcon';
 import CartMobile from './components/CartMobile';
+import Banner from './components/Banner';
 
 // pizza data
 const pizzas = [
@@ -379,14 +380,17 @@ const pizzas = [
 
 export default function Home() {
   return (
-    <div className='container mx-auto'>
-      <CartMobileIcon />
-      <CartMobile />
-      <div className='grid grid-cols-2 gap-[15px] md:grid-cols-3 xl:grid-cols-4 xl:gap-[30px]'>
-        {pizzas.map((pizza) => {
-          return <Pizza pizza={pizza} />;
-        })}
+    <section>
+      <Banner />
+      <div className='container mx-auto'>
+        <CartMobileIcon />
+        <CartMobile />
+        <div className='grid grid-cols-2 gap-[15px] md:grid-cols-3 xl:grid-cols-4 xl:gap-[30px]'>
+          {pizzas.map((pizza) => {
+            return <Pizza pizza={pizza} />;
+          })}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
