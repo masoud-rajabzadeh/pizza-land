@@ -22,7 +22,7 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        quicksand: [`var(--font-quicksand)`, 'sans-serif'],
+        raleway: [`var(--font-raleway)`, 'sans-serif'],
         bangers: [`var(--font-bangers)`, 'sans-serif'],
       },
       colors: {

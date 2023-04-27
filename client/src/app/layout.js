@@ -2,7 +2,7 @@
 import './globals.css';
 
 // import font
-import { Bangers, Quicksand } from 'next/font/google';
+import { Bangers, Raleway } from 'next/font/google';
 
 // components
 import Nav from './components/Nav';
@@ -11,9 +11,9 @@ import Footer from './components/Footer';
 // provider
 import CartProvider from './context/CartContext';
 
-const quicksand = Quicksand({
+const raleway = Raleway({
   subsets: ['latin'],
-  variable: '--font-quicksand',
+  variable: '--font-raleway',
 });
 
 const bangers = Bangers({
@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
     <CartProvider>
       <html lang='en'>
         <body
-          className={`${quicksand.variable} ${bangers.variable} font-quicksand`}
+          className={`${raleway.variable} ${bangers.variable} font-raleway`}
         >
           <Nav />
           {children}

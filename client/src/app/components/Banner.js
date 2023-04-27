@@ -14,8 +14,8 @@ const Banner = () => {
               Pizza perfection in every bite
             </h1>
           </div>
-          {/* text */}
-          <div className='flex-1'>
+          {/* iamge */}
+          <div className='flex-1 flex justify-end'>
             <Image src={'/pizza-banner.png'} width={550} height={558} alt='' />
           </div>
         </div>
