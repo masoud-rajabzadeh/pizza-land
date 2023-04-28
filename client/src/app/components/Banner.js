@@ -49,7 +49,7 @@ const Banner = () => {
             <MouseParallaxChild
               factorX={0.2}
               factorY={0.3}
-              className='absolute top-6 left-4'
+              className='absolute top-6 left-4 hidden xl:flex'
             >
               <Image
                 src={'/chilli-1.png'}
@@ -63,7 +63,7 @@ const Banner = () => {
             <MouseParallaxChild
               factorX={0.4}
               factorY={0.4}
-              className='absolute top-16 -left-4'
+              className='absolute top-16 -left-4 hidden xl:flex'
             >
               <Image
                 src={'/chilli-2.png'}
@@ -77,7 +77,7 @@ const Banner = () => {
             <MouseParallaxChild
               factorX={0.6}
               factorY={0.6}
-              className='absolute top-80 -left-24'
+              className='absolute top-80 -left-24 hidden xl:flex'
             >
               <Image
                 src={'/garlic-1.png'}
@@ -91,7 +91,7 @@ const Banner = () => {
             <MouseParallaxChild
               factorX={0.3}
               factorY={0.6}
-              className='absolute top-[22rem] -left-8'
+              className='absolute top-[22rem] -left-8 hidden xl:flex'
             >
               <Image
                 src={'/garlic-2.png'}
@@ -105,7 +105,7 @@ const Banner = () => {
             <MouseParallaxChild
               factorX={0.4}
               factorY={1}
-              className='absolute top-96 -left-20'
+              className='absolute top-96 -left-20 hidden xl:flex'
             >
               <Image
                 src={'/garlic-3.png'}
@@ -119,7 +119,7 @@ const Banner = () => {
             <MouseParallaxChild
               factorX={0.2}
               factorY={0.2}
-              className='absolute top-96 left-12'
+              className='absolute top-96 left-12 hidden xl:flex'
             >
               <Image
                 src={'/leaves.png'}
