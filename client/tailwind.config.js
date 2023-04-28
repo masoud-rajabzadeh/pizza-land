@@ -28,6 +28,7 @@ module.exports = {
       },
       colors: {
         primary: '#D1411E',
+        secondary: '#FFA323',
       },
       backgroundImage: {
         'banner-pattern': "url('/pattern.png')",

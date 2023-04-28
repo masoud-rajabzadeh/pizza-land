@@ -4,9 +4,9 @@ import Link from 'next/link';
 const Nav = () => {
   return (
     <nav className='absolute w-full py-8'>
-      <div className='container mx-auto flex justify-between items-center'>
+      <div className='container mx-auto flex flex-col lg:flex-row gap-y-3 justify-between items-center'>
         {/* logo */}
-        <Link href={'#'}>
+        <Link href={'#'} className='max-w-[160px] lg:max-w-max'>
           <Image src={'logo.svg'} width={180} height={180} />
         </Link>
         {/* phone & cart */}
