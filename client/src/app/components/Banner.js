@@ -49,11 +49,25 @@ const Banner = () => {
             <MouseParallaxChild
               factorX={0.2}
               factorY={0.3}
-              className='absolute top-6 left-24'
+              className='absolute top-6 left-4'
             >
               <Image
                 src={'/chilli-1.png'}
                 width={160}
+                height={84}
+                alt=''
+                priority={'lazy'}
+              />
+            </MouseParallaxChild>
+            {/* chilli 2 */}
+            <MouseParallaxChild
+              factorX={0.4}
+              factorY={0.4}
+              className='absolute top-16 -left-4'
+            >
+              <Image
+                src={'/chilli-2.png'}
+                width={130}
                 height={84}
                 alt=''
                 priority={'lazy'}
@@ -96,6 +110,20 @@ const Banner = () => {
               <Image
                 src={'/garlic-3.png'}
                 width={100}
+                height={72}
+                alt=''
+                priority={'lazy'}
+              />
+            </MouseParallaxChild>
+            {/* leaves */}
+            <MouseParallaxChild
+              factorX={0.2}
+              factorY={0.2}
+              className='absolute top-96 left-12'
+            >
+              <Image
+                src={'/leaves.png'}
+                width={180}
                 height={72}
                 alt=''
                 priority={'lazy'}
