@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 // image
 import Image from 'next/image';
 // import components
 import SizeSelection from './SizeSelection';
 import CrustSelection from './CrustSelection';
 import Topping from './Topping';
+// context
+import { CartContext } from '../context/CartContext';
 
 const PizzaDetails = ({ pizza }) => {
   // pizza size state
@@ -17,6 +19,8 @@ const PizzaDetails = ({ pizza }) => {
   const [additionalToppingPrice, setAdditionalToppingPrice] = useState(0);
   // total price state
   const [total, setTotal] = useState(0);
+
+  const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     size === 'small'
@@ -105,13 +109,15 @@ const PizzaDetails = ({ pizza }) => {
         </div>
         <div className='h-full flex items-center px-2 lg:items-end'>
           <button
-            onClick={() =>
-              console.log({
-                total: total,
-                toppings: additionalTopping,
-                pizzaSize: size,
-                crust: crust,
-              })
+            onClick={
+              () => addToCart(pizza.id, total, additionalTopping, size, crust)
+              // console.log({
+              //   id: pizza.id,
+              //   total: total,
+              //   toppings: additionalTopping,
+              //   pizzaSize: size,
+              //   crust: crust,
+              // })
             }
             className='btn btn-lg btn-primary w-full flex justify-center gap-x-2 text-[20px] font-semibold'
           >

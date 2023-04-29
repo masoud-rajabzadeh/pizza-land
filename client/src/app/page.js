@@ -3,6 +3,7 @@ import Pizza from './components/Pizza';
 import CartMobileIcon from './components/CartMobileIcon';
 import CartMobile from './components/CartMobile';
 import Banner from './components/Banner';
+import CartDesktop from './components/CartDesktop';
 
 // pizza data
 const pizzas = [
@@ -391,6 +392,7 @@ export default function Home() {
           })}
         </div>
       </div>
+      <CartDesktop />
     </section>
   );
 }

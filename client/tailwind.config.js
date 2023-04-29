@@ -27,8 +27,9 @@ module.exports = {
         robotoCondensed: [`var(--font-robotoCondensed)`, 'sans-serif'],
       },
       colors: {
-        primary: '#D1411E',
-        secondary: '#FFA323',
+        primary: '#d1411e',
+        secondary: '#ffa323',
+        tertiary: '#401c14',
       },
       backgroundImage: {
         'banner-pattern': "url('/pattern.png')",
