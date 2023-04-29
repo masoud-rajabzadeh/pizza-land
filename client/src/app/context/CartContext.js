@@ -9,8 +9,10 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
   const addToCart = (id, total, additionalTopping, size, crust) => {
-    console.log({ id, total, additionalTopping, size, crust });
+    console.log({ id, total, additionalTopping, size, crust, amount: 1 });
+    setCart([...cart, { id, total, additionalTopping, size, crust }]);
   };
+  console.log(cart);
 
   return (
     <CartContext.Provider value={{ isOpen, setIsOpen, cart, addToCart }}>
