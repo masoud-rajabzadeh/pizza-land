@@ -17,7 +17,7 @@ const Nav = () => {
         <div className='flex gap-x-8 items-center'>
           {/* phone */}
           <div className='flex gap-x-3 items-center'>
-            <Image src={'phone.svg'} width={40} height={40} alt='' />
+            <Image src={'phone.svg'} width={42} height={42} alt='' />
             <div className='text-white'>
               <div className='font-robotoCondensed uppercase font-medium leading-none text-sm'>
                 24/7 PIZZA DELIVERY SERVICE

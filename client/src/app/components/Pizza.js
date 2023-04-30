@@ -93,7 +93,7 @@ const Pizza = ({ pizza }) => {
           >
             <IoCloseOutline className='text-4xl text-red-400' />
           </div>
-          <PizzaDetails pizza={pizza} />
+          <PizzaDetails pizza={pizza} modal={modal} setModal={setModal} />
         </Modal>
       )}
     </div>
