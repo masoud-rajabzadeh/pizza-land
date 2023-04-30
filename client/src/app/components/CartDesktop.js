@@ -29,7 +29,10 @@ const CartDesktop = () => {
             <div className='text-white'>
               <Image src={pizza.image} width={50} height={50} alt='' />
               <div>{pizza.name}</div>
-              <div>{pizza.amount}</div>
+              <div>qty: {pizza.amount}</div>
+              <div>{pizza.crust}</div>
+              <div>{pizza.size}</div>
+              <div>{pizza.total}</div>
             </div>
           );
         })}

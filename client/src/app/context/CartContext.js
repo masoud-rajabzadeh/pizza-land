@@ -30,11 +30,7 @@ const CartProvider = ({ children }) => {
     };
 
     const cartItemIndex = cart.findIndex(
-      (item) =>
-        item.id === id &&
-        item.total === total &&
-        item.crust === crust &&
-        item.size === size
+      (item) => item.id === id && item.total === total
     );
 
     if (cartItemIndex === -1) {
@@ -45,7 +41,7 @@ const CartProvider = ({ children }) => {
       setCart(newCart);
     }
   };
-  console.log(cart);
+
   return (
     <CartContext.Provider value={{ isOpen, setIsOpen, cart, addToCart }}>
       {children}
