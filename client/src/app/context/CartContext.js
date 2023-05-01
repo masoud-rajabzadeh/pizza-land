@@ -42,8 +42,16 @@ const CartProvider = ({ children }) => {
     }
   };
 
+  // remove item
+  const removeItem = (id, total) => {
+    // change the total (name) to price
+    console.log(id, total);
+  };
+
   return (
-    <CartContext.Provider value={{ isOpen, setIsOpen, cart, addToCart }}>
+    <CartContext.Provider
+      value={{ isOpen, setIsOpen, cart, addToCart, removeItem }}
+    >
       {children}
     </CartContext.Provider>
   );

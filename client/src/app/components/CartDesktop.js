@@ -7,7 +7,7 @@ import Image from 'next/image';
 import { CartContext } from '../context/CartContext';
 
 const CartDesktop = () => {
-  const { isOpen, setIsOpen, cart } = useContext(CartContext);
+  const { isOpen, setIsOpen, cart, removeItem } = useContext(CartContext);
   return (
     <div
       className={`${
@@ -39,8 +39,11 @@ const CartDesktop = () => {
                   <div className='capitalize'>{pizza.crust} crust</div>
                   <div className='capitalize'>{pizza.size} size</div>
                 </div>
-                <div className='flex flex-col justify-between'>
-                  <div className='bg-primary self-end rounded-full cursor-pointer'>
+                <div className='flex flex-col justify-between pt-1'>
+                  <div
+                    onClick={() => removeItem(pizza.id, pizza.total)}
+                    className='bg-primary self-end rounded-full cursor-pointer'
+                  >
                     <IoCloseOutline className='text-xl transition-all group-hover:rotate-180 duration-300' />
                   </div>
                   <div>Price: {pizza.total * pizza.amount}</div>
