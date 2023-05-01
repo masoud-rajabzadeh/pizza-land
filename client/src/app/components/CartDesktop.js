@@ -25,14 +25,13 @@ const CartDesktop = () => {
       {/* item list */}
       <div className='px-10 flex flex-col gap-y-4 h-[70vh] overflow-y-scroll py-4'>
         {cart.map((pizza) => {
-          console.log(pizza);
           return (
             <div className='text-white'>
               <div className='flex gap-x-4'>
                 <div className='flex justify-start items-center'>
                   <Image src={pizza.image} width={90} height={90} alt='' />
                 </div>
-                <div className='bg-green-200/20 flex-1'>
+                <div className='flex-1'>
                   <div className='text-xl capitalize'>Pizza {pizza.name}</div>
                   <div>qty: {pizza.amount}</div>
                   <div className='capitalize'>{pizza.crust} crust</div>
