@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from 'react';
-// image
+// next image
 import Image from 'next/image';
 // import components
 import SizeSelection from './SizeSelection';

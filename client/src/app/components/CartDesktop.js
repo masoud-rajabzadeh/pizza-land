@@ -23,7 +23,7 @@ const CartDesktop = () => {
         </div>
       </div>
       {/* item list */}
-      <div className='px-10 flex flex-col gap-y-4 h-[70vh] overflow-y-scroll py-4'>
+      <div className='px-10 flex flex-col gap-y-4 h-[70vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-secondary scrollbar-track-white/10 py-4 mr-4'>
         {cart.map((pizza) => {
           return (
             <div className='text-white'>
@@ -32,10 +32,17 @@ const CartDesktop = () => {
                   <Image src={pizza.image} width={90} height={90} alt='' />
                 </div>
                 <div className='flex-1'>
-                  <div className='text-xl capitalize'>Pizza {pizza.name}</div>
-                  <div>qty: {pizza.amount}</div>
+                  <div className='text-xl capitalize mb-2'>
+                    Pizza {pizza.name}
+                  </div>
+                  <div>Qty: {pizza.amount}</div>
                   <div className='capitalize'>{pizza.crust} crust</div>
                   <div className='capitalize'>{pizza.size} size</div>
+                </div>
+                <div className='flex flex-col justify-between'>
+                  <div className='bg-primary self-end rounded-full cursor-pointer'>
+                    <IoCloseOutline className='text-xl transition-all group-hover:rotate-180 duration-300' />
+                  </div>
                   <div>Price: {pizza.total * pizza.amount}</div>
                 </div>
               </div>
