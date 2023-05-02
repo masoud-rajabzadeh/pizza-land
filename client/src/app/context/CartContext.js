@@ -18,6 +18,9 @@ const CartProvider = ({ children }) => {
     size,
     crust
   ) => {
+    // sort additionalTopping array by name
+    additionalTopping.sort((a, b) => a.name.localeCompare(b.name));
+
     const newItem = {
       id,
       image,
@@ -29,31 +32,14 @@ const CartProvider = ({ children }) => {
       amount: 1,
     };
 
-    // define a function to compare two arrays for equality
-    const arraysAreEqual = (array1, array2) => {
-      if (array1.length !== array2.length) {
-        return false;
-      }
-
-      for (let i = 0; i < array1.length; i++) {
-        const item1 = array1[i];
-        const item2 = array2[i];
-
-        if (JSON.stringify(item1) !== JSON.stringify(item2)) {
-          return false;
-        }
-      }
-
-      return true;
-    };
-
-    // check if an identical item already exists in the cart
     const cartItemIndex = cart.findIndex(
       (item) =>
         item.id === id &&
         item.total === total &&
         item.size === size &&
-        arraysAreEqual(item.additionalTopping, additionalTopping) &&
+        // check if additionalTopping array is equal
+        JSON.stringify(item.additionalTopping) ===
+          JSON.stringify(additionalTopping) &&
         item.crust === crust
     );
 
