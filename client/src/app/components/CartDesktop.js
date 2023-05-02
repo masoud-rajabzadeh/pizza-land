@@ -23,8 +23,15 @@ const CartDesktop = () => {
         </div>
       </div>
       {/* item list */}
-      <div className='px-10 flex flex-col gap-y-4 h-[70vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-secondary scrollbar-track-white/10 py-4 mr-4'>
+      <div
+        className={`px-10 flex flex-col gap-y-4 h-[70vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-secondary ${
+          cart.length > 3
+            ? 'scrollbar-track-white/10'
+            : 'scrollbar-track-transparent'
+        } py-4 mr-4 mt-8`}
+      >
         {cart.map((pizza) => {
+          console.log(pizza.additionalTopping);
           return (
             <div className='text-white'>
               <div className='flex gap-x-4'>
@@ -54,6 +61,7 @@ const CartDesktop = () => {
                 <div>
                   Toppings: {pizza.additionalTopping.length === 0 && 'None'}
                 </div>
+
                 {pizza.additionalTopping.map((topping) => {
                   return (
                     <div className='capitalize text-sm bg-secondary text-tertiary px-3 py-0.5 font-semibold rounded-full'>
