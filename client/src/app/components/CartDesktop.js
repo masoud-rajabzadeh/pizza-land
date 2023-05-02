@@ -7,7 +7,8 @@ import Image from 'next/image';
 import { CartContext } from '../context/CartContext';
 
 const CartDesktop = () => {
-  const { isOpen, setIsOpen, cart, removeItem } = useContext(CartContext);
+  const { isOpen, setIsOpen, cart, removeItem, cartTotal } =
+    useContext(CartContext);
   return (
     <div
       className={`${
@@ -31,7 +32,6 @@ const CartDesktop = () => {
         } py-4 mr-4 mt-8`}
       >
         {cart.map((pizza) => {
-          console.log(pizza.additionalTopping);
           return (
             <div className='text-white'>
               <div className='flex gap-x-4'>
@@ -73,6 +73,10 @@ const CartDesktop = () => {
             </div>
           );
         })}
+      </div>
+      {/* cart total */}
+      <div className='bg-purple-400/20 px-8 py-8 text-white'>
+        <div>Total: {parseFloat(cartTotal).toFixed(2)}</div>
       </div>
     </div>
   );

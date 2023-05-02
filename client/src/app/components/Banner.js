@@ -1,7 +1,7 @@
 'use client';
 // next image
 import Image from 'next/image';
-// parallax mouse
+// parallax
 import {
   MouseParallaxContainer,
   MouseParallaxChild,
