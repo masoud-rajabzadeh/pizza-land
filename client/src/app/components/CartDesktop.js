@@ -17,6 +17,7 @@ const CartDesktop = () => {
     cartTotal,
     increaseAmount,
     decreaseAmount,
+    itemAmount,
   } = useContext(CartContext);
   return (
     <div
@@ -26,7 +27,7 @@ const CartDesktop = () => {
     >
       {/* top */}
       <div className='w-full h-20 flex items-center justify-between px-10 text-white bg-black/10'>
-        <div>Shopping Bag({cart.length})</div>
+        <div>Shopping Bag({itemAmount})</div>
         {/* close icon */}
         <div onClick={() => setIsOpen(false)} className='cursor-pointer group'>
           <IoCloseOutline className='text-3xl transition-all group-hover:rotate-180 duration-300' />
