@@ -22,7 +22,7 @@ const CartDesktop = () => {
     <div
       className={`${
         isOpen ? 'left-0' : '-left-full'
-      } bg-tertiary fixed top-0 bottom-0 w-[500px] shadow-2xl hidden lg:flex flex-col transition-all duration-500`}
+      } bg-tertiary fixed top-0 bottom-0 w-[500px] shadow-2xl hidden lg:flex flex-col transition-all duration-300`}
     >
       {/* top */}
       <div className='w-full h-20 flex items-center justify-between px-10 text-white bg-black/10'>
