@@ -8,6 +8,15 @@ const CartProvider = ({ children }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [cart, setCart] = useState([]);
   const [cartTotal, setCartTotal] = useState(0);
+  const [itemAmount, setItemAmount] = useState(0);
+
+  // item amount
+  useEffect(() => {
+    const amount = cart.reduce((a, c) => {
+      return a + c.amount;
+    }, 0);
+    setItemAmount(amount);
+  });
 
   // cart total
   useEffect(() => {
@@ -115,6 +124,7 @@ const CartProvider = ({ children }) => {
         cartTotal,
         increaseAmount,
         decreaseAmount,
+        itemAmount,
       }}
     >
       {children}

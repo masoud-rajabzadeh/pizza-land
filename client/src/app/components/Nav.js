@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import { CartContext } from '../context/CartContext';
 
 const Nav = () => {
-  const { isOpen, setIsOpen } = useContext(CartContext);
+  const { isOpen, setIsOpen, itemAmount } = useContext(CartContext);
   return (
     <nav className='absolute w-full py-8'>
       <div className='container mx-auto flex flex-col lg:flex-row gap-y-3 justify-between items-center'>
@@ -35,7 +35,7 @@ const Nav = () => {
             <Image src={'bag.svg'} width={38} height={38} alt='' />
             {/* amount */}
             <div className='w-6 h-6 bg-[#401C14] absolute -bottom-2 -right-1 rounded-full flex justify-center items-center text-white text-[13px] font-robotoCondensed'>
-              3
+              {itemAmount}
             </div>
           </div>
         </div>

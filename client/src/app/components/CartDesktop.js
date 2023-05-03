@@ -53,7 +53,7 @@ const CartDesktop = () => {
                     <div className='py-2 flex items-center gap-x-3'>
                       <div
                         onClick={() => decreaseAmount(pizza.id, pizza.total)}
-                        className='w-4 h-4 bg-white/30 text-tertiary rounded-full flex justify-center items-center cursor-pointer hover:scale-110 hover:bg-secondary transition-all'
+                        className='w-4 h-4 bg-secondary text-tertiary rounded-full flex justify-center items-center cursor-pointer hover:scale-110 hover:bg-secondary transition-all'
                       >
                         <BiMinus />
                       </div>
@@ -62,7 +62,7 @@ const CartDesktop = () => {
                       </div>
                       <div
                         onClick={() => increaseAmount(pizza.id, pizza.total)}
-                        className='w-4 h-4 bg-white/30 text-tertiary rounded-full flex justify-center items-center cursor-pointer hover:scale-110 hover:bg-secondary transition-all'
+                        className='w-4 h-4 bg-secondary text-tertiary rounded-full flex justify-center items-center cursor-pointer hover:scale-110 hover:bg-secondary transition-all'
                       >
                         <BiPlus />
                       </div>
@@ -90,7 +90,7 @@ const CartDesktop = () => {
                   </div>
                   <div className='capitalize'>
                     price:{' '}
-                    <span className='text-primary font-bold'>
+                    <span className='text-secondary font-bold'>
                       $ {parseFloat(pizza.total * pizza.amount).toFixed(2)}
                     </span>
                   </div>
