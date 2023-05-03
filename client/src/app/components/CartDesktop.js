@@ -1,6 +1,7 @@
 'use client';
 import { useContext } from 'react';
 import { IoCloseOutline } from 'react-icons/io5';
+import { FaTrash } from 'react-icons/fa';
 // next image
 import Image from 'next/image';
 // context
@@ -18,6 +19,7 @@ const CartDesktop = () => {
     increaseAmount,
     decreaseAmount,
     itemAmount,
+    clearCart,
   } = useContext(CartContext);
   return (
     <div
@@ -85,7 +87,7 @@ const CartDesktop = () => {
                 <div className='flex flex-col justify-between pt-1'>
                   <div
                     onClick={() => removeItem(pizza.id, pizza.total)}
-                    className='bg-primary w-4 h-4 flex justify-center items-center self-end rounded-full cursor-pointer hover:scale-110 duration-100 transition-all'
+                    className='bg-primary w-5 h-5 flex justify-center items-center self-end rounded-full cursor-pointer hover:scale-110 duration-100 transition-all'
                   >
                     <IoCloseOutline />
                   </div>
@@ -114,9 +116,15 @@ const CartDesktop = () => {
           );
         })}
       </div>
-      {/* cart total */}
-      <div className='bg-purple-400/20 px-8 py-8 text-white'>
+      <div className='px-8 py-8 text-white'>
+        {/* cart total */}
         <div>Total: {parseFloat(cartTotal).toFixed(2)}</div>
+        <button
+          onClick={() => clearCart()}
+          className='bg-primary w-12 h-12 rounded-full flex justify-center items-center'
+        >
+          <FaTrash />
+        </button>
       </div>
     </div>
   );
