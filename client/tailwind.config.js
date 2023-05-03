@@ -29,7 +29,7 @@ module.exports = {
       colors: {
         primary: '#d1411e',
         secondary: '#ffa323',
-        tertiary: '#401c14',
+        tertiary: '#381912',
       },
       backgroundImage: {
         'banner-pattern': "url('/pattern.png')",
