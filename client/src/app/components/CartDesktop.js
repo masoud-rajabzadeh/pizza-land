@@ -5,6 +5,8 @@ import { IoCloseOutline } from 'react-icons/io5';
 import Image from 'next/image';
 // context
 import { CartContext } from '../context/CartContext';
+// icons
+import { BiPlus, BiMinus } from 'react-icons/bi';
 
 const CartDesktop = () => {
   const { isOpen, setIsOpen, cart, removeItem, cartTotal } =
@@ -13,7 +15,7 @@ const CartDesktop = () => {
     <div
       className={`${
         isOpen ? 'left-0' : '-left-full'
-      } bg-tertiary fixed top-0 bottom-0 w-[500px] shadow-2xl hidden lg:flex flex-col transition-all duration-300`}
+      } bg-tertiary fixed top-0 bottom-0 w-[500px] shadow-2xl hidden lg:flex flex-col transition-all duration-500`}
     >
       {/* top */}
       <div className='w-full h-20 flex items-center justify-between px-10 text-white bg-black/10'>
@@ -34,26 +36,48 @@ const CartDesktop = () => {
         {cart.map((pizza) => {
           return (
             <div className='text-white'>
-              <div className='flex gap-x-4'>
-                <div className='flex justify-start items-center'>
+              <div className='flex gap-x-4 mb-2'>
+                <div className='flex justify-center items-center'>
                   <Image src={pizza.image} width={90} height={90} alt='' />
                 </div>
-                <div className='flex-1'>
-                  <div className='text-xl capitalize mb-2'>
-                    Pizza {pizza.name}
+                <div className='flex-1 flex flex-col gap-y-2'>
+                  <div className='text-xl capitalize'>pizza {pizza.name}</div>
+                  <div className='flex flex-col gap-y-2'>
+                    <div className='py-2 flex items-center gap-x-4'>
+                      <div className='w-4 h-4 bg-white/30 text-tertiary rounded-full flex justify-center items-center cursor-pointer hover:scale-110 hover:bg-secondary transition-all'>
+                        <BiMinus />
+                      </div>
+                      <span className='text-secondary font-semibold'>
+                        {pizza.amount}
+                      </span>
+                      <div className='w-4 h-4 bg-white/30 text-tertiary rounded-full flex justify-center items-center cursor-pointer hover:scale-110 hover:bg-secondary transition-all'>
+                        <BiPlus />
+                      </div>
+                    </div>
+                    <div className='capitalize'>
+                      crust:{' '}
+                      <span className='text-secondary font-semibold'>
+                        {pizza.crust}
+                      </span>
+                    </div>
+                    <div className='capitalize'>
+                      size:{' '}
+                      <span className='text-secondary font-semibold'>
+                        {pizza.size}
+                      </span>
+                    </div>
                   </div>
-                  <div>Qty: {pizza.amount}</div>
-                  <div className='capitalize'>{pizza.crust} crust</div>
-                  <div className='capitalize'>{pizza.size} size</div>
                 </div>
                 <div className='flex flex-col justify-between pt-1'>
                   <div
                     onClick={() => removeItem(pizza.id, pizza.total)}
-                    className='bg-primary self-end rounded-full cursor-pointer'
+                    className='bg-primary self-end rounded-full cursor-pointer hover:scale-110 hover:rotate-90 transition-all'
                   >
                     <IoCloseOutline className='text-xl transition-all group-hover:rotate-180 duration-300' />
                   </div>
-                  <div>Price: {pizza.total * pizza.amount}</div>
+                  <div className='capitalize'>
+                    price: {pizza.total * pizza.amount}
+                  </div>
                 </div>
               </div>
               {/* toppings */}
