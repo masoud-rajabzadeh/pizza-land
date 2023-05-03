@@ -68,6 +68,8 @@ const CartProvider = ({ children }) => {
       newCart[cartItemIndex].amount += 1;
       setCart(newCart);
     }
+    // open the cart
+    setIsOpen(true);
   };
 
   // remove item
