@@ -384,15 +384,12 @@ export default function Home() {
     <section>
       <Banner />
       <div className='container mx-auto'>
-        <CartMobileIcon />
-        <CartMobile />
         <div className='grid grid-cols-2 gap-[15px] md:grid-cols-3 xl:grid-cols-4 xl:gap-[30px] py-12'>
           {pizzas.map((pizza) => {
             return <Pizza pizza={pizza} />;
           })}
         </div>
       </div>
-      <CartDesktop />
     </section>
   );
 }

@@ -7,7 +7,9 @@ import { Bangers, Quicksand, Roboto_Condensed } from 'next/font/google';
 // components
 import Nav from './components/Nav';
 import Footer from './components/Footer';
-
+import CartMobileIcon from './components/CartMobileIcon';
+import CartMobile from './components/CartMobile';
+import CartDesktop from './components/CartDesktop';
 // provider
 import CartProvider from './context/CartContext';
 
@@ -36,7 +38,10 @@ export default function RootLayout({ children }) {
           className={`${quicksand.variable} ${bangers.variable} ${robotoCondensed.variable} font-quicksand`}
         >
           <Nav />
+          <CartMobileIcon />
+          <CartMobile />
           {children}
+          <CartDesktop />
           <Footer />
         </body>
       </html>
