@@ -77,10 +77,10 @@ const CartDesktop = () => {
                     </div>
                   </div>
                 </div>
-                <div className='flex flex-col justify-between pt-1'>
+                <div className='flex flex-col justify-between'>
                   <div
                     onClick={() => removeItem(pizza.id, pizza.total)}
-                    className='w-5 h-5 text-xl flex justify-center items-center self-end cursor-pointer hover:scale-110 duration-100 transition-all'
+                    className='text-2xl flex justify-center items-center self-end cursor-pointer hover:scale-110 duration-100 transition-all'
                   >
                     <IoCloseOutline />
                   </div>
@@ -113,7 +113,7 @@ const CartDesktop = () => {
         <div>Total: {parseFloat(cartTotal).toFixed(2)}</div>
         <button
           onClick={() => clearCart()}
-          className='bg-primary w-12 h-12 rounded-full flex justify-center items-center'
+          className='bg-primary w-12 h-12 rounded-xl flex justify-center items-center'
         >
           <FaTrash />
         </button>
