@@ -18,12 +18,12 @@ const CartProvider = ({ children }) => {
     setItemAmount(amount);
   });
 
-  // cart total
+  // cart price
   useEffect(() => {
-    const total = cart.reduce((a, c) => {
-      return a + Number(c.total) * c.amount;
+    const price = cart.reduce((a, c) => {
+      return a + Number(c.price) * c.amount;
     }, 0);
-    setCartTotal(total);
+    setCartTotal(price);
   }, [cart]);
 
   // add to cart
@@ -31,7 +31,7 @@ const CartProvider = ({ children }) => {
     id,
     image,
     name,
-    total,
+    price,
     additionalTopping,
     size,
     crust
@@ -43,7 +43,7 @@ const CartProvider = ({ children }) => {
       id,
       image,
       name,
-      total,
+      price,
       additionalTopping,
       size,
       crust,
@@ -53,7 +53,7 @@ const CartProvider = ({ children }) => {
     const cartItemIndex = cart.findIndex(
       (item) =>
         item.id === id &&
-        item.total === total &&
+        item.price === price &&
         item.size === size &&
         // check if additionalTopping array is equal
         JSON.stringify(item.additionalTopping) ===
@@ -73,9 +73,9 @@ const CartProvider = ({ children }) => {
   };
 
   // remove item
-  const removeItem = (id, total) => {
+  const removeItem = (id, price) => {
     const itemIndex = cart.findIndex(
-      (item) => item.id === id && item.total === total
+      (item) => item.id === id && item.price === price
     );
 
     if (itemIndex !== -1) {
@@ -86,9 +86,9 @@ const CartProvider = ({ children }) => {
   };
 
   // increase amount
-  const increaseAmount = (id, total) => {
+  const increaseAmount = (id, price) => {
     const itemIndex = cart.findIndex(
-      (item) => item.id === id && item.total === total
+      (item) => item.id === id && item.price === price
     );
     console.log(itemIndex);
 
@@ -100,9 +100,9 @@ const CartProvider = ({ children }) => {
   };
 
   // decrease amount
-  const decreaseAmount = (id, total) => {
+  const decreaseAmount = (id, price) => {
     const itemIndex = cart.findIndex(
-      (item) => item.id === id && item.total === total
+      (item) => item.id === id && item.price === price
     );
     console.log(itemIndex);
 

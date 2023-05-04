@@ -1,5 +1,5 @@
 'use client';
-import { useContext, useState } from 'react';
+import { useState } from 'react';
 // image
 import Image from 'next/image';
 // modal

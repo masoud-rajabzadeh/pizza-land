@@ -17,18 +17,18 @@ const PizzaDetails = ({ pizza, setModal }) => {
   const [additionalTopping, setAdditionalTopping] = useState([]);
   // additional topping price state
   const [additionalToppingPrice, setAdditionalToppingPrice] = useState(0);
-  // total price state
-  const [total, setTotal] = useState(0);
+  // price price state
+  const [price, setPrice] = useState(0);
 
   const { addToCart } = useContext(CartContext);
 
   useEffect(() => {
     size === 'small'
-      ? setTotal(parseFloat(pizza.priceSm + additionalToppingPrice).toFixed(2))
+      ? setPrice(parseFloat(pizza.priceSm + additionalToppingPrice).toFixed(2))
       : size === 'medium'
-      ? setTotal(parseFloat(pizza.priceMd + additionalToppingPrice).toFixed(2))
+      ? setPrice(parseFloat(pizza.priceMd + additionalToppingPrice).toFixed(2))
       : size === 'large'
-      ? setTotal(parseFloat(pizza.priceLg + additionalToppingPrice).toFixed(2))
+      ? setPrice(parseFloat(pizza.priceLg + additionalToppingPrice).toFixed(2))
       : null;
   });
 
@@ -114,7 +114,7 @@ const PizzaDetails = ({ pizza, setModal }) => {
                 pizza.id,
                 pizza.image,
                 pizza.name,
-                total,
+                price,
                 additionalTopping,
                 size,
                 crust
@@ -124,7 +124,7 @@ const PizzaDetails = ({ pizza, setModal }) => {
             className='btn btn-lg btn-primary w-full flex justify-center gap-x-2 text-[20px] font-semibold'
           >
             <div>Add to cart for</div>
-            <div>$ {total}</div>
+            <div>$ {price}</div>
           </button>
         </div>
       </div>

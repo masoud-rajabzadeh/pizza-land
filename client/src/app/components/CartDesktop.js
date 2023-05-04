@@ -60,7 +60,7 @@ const CartDesktop = () => {
                     {/* quantity controls */}
                     <div className='flex items-center gap-x-1'>
                       <div
-                        onClick={() => decreaseAmount(pizza.id, pizza.total)}
+                        onClick={() => decreaseAmount(pizza.id, pizza.price)}
                         className='w-[18px] h-[18px] flex justify-center items-center cursor-pointer text-white rounded-full bg-primary'
                       >
                         <BiMinus />
@@ -69,7 +69,7 @@ const CartDesktop = () => {
                         {pizza.amount}
                       </div>
                       <div
-                        onClick={() => increaseAmount(pizza.id, pizza.total)}
+                        onClick={() => increaseAmount(pizza.id, pizza.price)}
                         className='w-[18px] h-[18px] flex justify-center items-center cursor-pointer text-white rounded-full bg-primary'
                       >
                         <BiPlus />
@@ -79,14 +79,14 @@ const CartDesktop = () => {
                 </div>
                 <div className='flex flex-col justify-between'>
                   <div
-                    onClick={() => removeItem(pizza.id, pizza.total)}
+                    onClick={() => removeItem(pizza.id, pizza.price)}
                     className='text-2xl flex justify-center items-center self-end cursor-pointer hover:scale-110 duration-100 transition-all'
                   >
                     <IoCloseOutline />
                   </div>
                   <div className='capitalize'>
                     <span className='text-lg'>
-                      $ {parseFloat(pizza.total * pizza.amount).toFixed(2)}
+                      $ {parseFloat(pizza.price * pizza.amount).toFixed(2)}
                     </span>
                   </div>
                 </div>
@@ -111,7 +111,7 @@ const CartDesktop = () => {
       {/* bottom */}
       {cart.length >= 1 && (
         <div className='px-8 py-10 text-white'>
-          {/* clear cart btn & total cart price */}
+          {/* clear cart btn & price cart price */}
           <div className='flex items-center justify-between mb-6'>
             <button
               onClick={() => clearCart()}
