@@ -23,13 +23,16 @@ module.exports = {
     extend: {
       fontFamily: {
         bangers: [`var(--font-bangers)`, 'sans-serif'],
-        raleway: [`var(--font-raleway)`, 'sans-serif'],
+        quicksand: [`var(--font-quicksand)`, 'sans-serif'],
         robotoCondensed: [`var(--font-robotoCondensed)`, 'sans-serif'],
       },
       colors: {
         primary: '#d1411e',
         secondary: '#ffa323',
-        tertiary: '#381912',
+        tertiary: {
+          DEFAULT: '#331812',
+          100: '#411F18',
+        },
       },
       backgroundImage: {
         'banner-pattern': "url('/pattern.png')",

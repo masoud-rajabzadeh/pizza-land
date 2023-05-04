@@ -50,50 +50,42 @@ const CartDesktop = () => {
                 <div className='flex justify-center items-center'>
                   <Image src={pizza.image} width={90} height={90} alt='' />
                 </div>
-                <div className='flex-1 flex flex-col gap-y-2'>
-                  <div className='text-lg capitalize'>pizza {pizza.name}</div>
-                  <div className='flex flex-col gap-y-2'>
-                    <div className='py-2 flex items-center gap-x-3'>
+                <div className='flex-1 flex flex-col gap-y-1'>
+                  <div className='text-lg capitalize font-medium'>
+                    pizza {pizza.name}
+                  </div>
+                  <div className='flex flex-col gap-y-1'>
+                    <div className='capitalize'>{pizza.crust} crust</div>
+                    <div className='capitalize mb-2'>{pizza.size} size</div>
+                    {/* quantity controls */}
+                    <div className='flex items-center gap-x-1'>
                       <div
                         onClick={() => decreaseAmount(pizza.id, pizza.total)}
-                        className='w-4 h-4 bg-secondary text-tertiary rounded-full flex justify-center items-center cursor-pointer hover:scale-110 hover:bg-secondary transition-all'
+                        className='w-[18px] h-[18px] flex justify-center items-center cursor-pointer text-white rounded-full bg-primary'
                       >
                         <BiMinus />
                       </div>
-                      <div className='text-secondary font-semibold flex flex-1 max-w-[30px] justify-center items-center'>
+                      <div className='text-white flex flex-1 max-w-[30px] justify-center items-center text-sm'>
                         {pizza.amount}
                       </div>
                       <div
                         onClick={() => increaseAmount(pizza.id, pizza.total)}
-                        className='w-4 h-4 bg-secondary text-tertiary rounded-full flex justify-center items-center cursor-pointer hover:scale-110 hover:bg-secondary transition-all'
+                        className='w-[18px] h-[18px] flex justify-center items-center cursor-pointer text-white rounded-full bg-primary'
                       >
                         <BiPlus />
                       </div>
-                    </div>
-                    <div className='capitalize'>
-                      crust:{' '}
-                      <span className='text-secondary font-semibold'>
-                        {pizza.crust}
-                      </span>
-                    </div>
-                    <div className='capitalize'>
-                      size:{' '}
-                      <span className='text-secondary font-semibold'>
-                        {pizza.size}
-                      </span>
                     </div>
                   </div>
                 </div>
                 <div className='flex flex-col justify-between pt-1'>
                   <div
                     onClick={() => removeItem(pizza.id, pizza.total)}
-                    className='bg-primary w-5 h-5 flex justify-center items-center self-end rounded-full cursor-pointer hover:scale-110 duration-100 transition-all'
+                    className='w-5 h-5 text-xl flex justify-center items-center self-end cursor-pointer hover:scale-110 duration-100 transition-all'
                   >
                     <IoCloseOutline />
                   </div>
                   <div className='capitalize'>
-                    price:{' '}
-                    <span className='text-secondary font-bold'>
+                    <span className='text-lg'>
                       $ {parseFloat(pizza.total * pizza.amount).toFixed(2)}
                     </span>
                   </div>
@@ -106,7 +98,7 @@ const CartDesktop = () => {
                 </div>
                 {pizza.additionalTopping.map((topping) => {
                   return (
-                    <div className='capitalize text-sm bg-secondary text-tertiary px-3 py-[1px] font-semibold rounded-full'>
+                    <div className='capitalize text-sm bg-secondary text-tertiary font-bold px-3 py-1 rounded-full leading-none'>
                       {topping.name}
                     </div>
                   );
