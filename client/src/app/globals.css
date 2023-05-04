@@ -19,13 +19,16 @@
   .btn {
     @apply rounded-xl font-semibold transition-all;
   }
-  .btn-primary {
-    @apply bg-primary text-white hover:bg-primary/90;
-  }
   .btn-sm {
     @apply py-3 px-6;
   }
   .btn-lg {
     @apply py-4 px-6;
+  }
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90;
+  }
+  .btn-secondary {
+    @apply bg-secondary text-white hover:bg-secondary/90;
   }
 }

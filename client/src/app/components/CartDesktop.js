@@ -108,16 +108,31 @@ const CartDesktop = () => {
           );
         })}
       </div>
-      <div className='px-8 py-8 text-white'>
-        {/* cart total */}
-        <div>Total: {parseFloat(cartTotal).toFixed(2)}</div>
-        <button
-          onClick={() => clearCart()}
-          className='bg-primary w-12 h-12 rounded-xl flex justify-center items-center'
-        >
-          <FaTrash />
-        </button>
-      </div>
+      {/* bottom */}
+      {cart.length >= 1 && (
+        <div className='px-8 py-10 text-white'>
+          {/* clear cart btn & total cart price */}
+          <div className='flex items-center justify-between mb-6'>
+            <button
+              onClick={() => clearCart()}
+              className='w-12 h-12 btn-primary rounded-xl flex justify-center items-center'
+            >
+              <FaTrash />
+            </button>
+            <div className='text-lg'>
+              Total: $ {parseFloat(cartTotal).toFixed(2)}
+            </div>
+          </div>
+          <div className='flex flex-col gap-y-3'>
+            <button className='btn btn-lg btn-secondary text-tertiary font-bold'>
+              View cart
+            </button>
+            <button className='btn btn-lg btn-primary font-bold'>
+              Checkout
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
