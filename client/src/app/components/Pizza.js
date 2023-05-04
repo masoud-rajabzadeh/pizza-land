@@ -10,7 +10,7 @@ import PizzaDetails from './PizzaDetails';
 import { IoCloseOutline } from 'react-icons/io5';
 
 // bind modal to #pizza
-Modal.setAppElement('#pizza');
+Modal.setAppElement('body');
 
 // modal styles
 const modalStyles = {
@@ -34,7 +34,7 @@ const Pizza = ({ pizza }) => {
   };
 
   return (
-    <div id='pizza' className='group py-2 px-4 xl:py-4 xl:px-2 rounded-xl'>
+    <div className='group py-2 px-4 xl:py-4 xl:px-2 rounded-xl'>
       <Image
         onClick={openModal}
         width={270}
