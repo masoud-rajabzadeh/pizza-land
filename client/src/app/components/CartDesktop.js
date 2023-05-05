@@ -25,8 +25,8 @@ const CartDesktop = () => {
             : 'scrollbar-track-transparent'
         } `}
       >
-        {cart.map((pizza) => {
-          return <CartItem pizza={pizza} key={pizza.id} />;
+        {cart.map((pizza, index) => {
+          return <CartItem pizza={pizza} key={index} />;
         })}
       </div>
       {/* cart bottom */}

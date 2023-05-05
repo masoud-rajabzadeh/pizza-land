@@ -47,7 +47,7 @@ const PizzaDetails = ({ pizza, setModal }) => {
     <div className='flex flex-col lg:flex-row lg:gap-x-8 h-full md:p-8'>
       <div className='lg:flex-1 flex justify-center items-center'>
         {/* pizza image */}
-        <div className='max-w-[300px] lg:max-w-none'>
+        <div className='max-w-[300px] lg:max-w-none mt-6 lg:mt-0'>
           <Image
             width={450}
             height={450}
