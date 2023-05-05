@@ -2,6 +2,8 @@ import React, { useContext, useState } from 'react';
 // icons
 import { FaTrash } from 'react-icons/fa';
 import { IoCloseOutline } from 'react-icons/io5';
+// components
+import CheckoutDetails from './CheckoutDetails';
 // modal
 import Modal from 'react-modal';
 // context
@@ -84,6 +86,7 @@ const CartBottom = () => {
           >
             <IoCloseOutline className='text-4xl text-red-400' />
           </div>
+          <CheckoutDetails />
         </Modal>
       )}
     </>
