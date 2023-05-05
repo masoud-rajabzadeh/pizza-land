@@ -9,7 +9,7 @@ import PizzaDetails from './PizzaDetails';
 // icons
 import { IoCloseOutline } from 'react-icons/io5';
 
-// bind modal to #pizza
+// bind modal to body
 Modal.setAppElement('body');
 
 // modal styles

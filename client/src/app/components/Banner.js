@@ -34,7 +34,7 @@ const Banner = () => {
           {/* images */}
           <MouseParallaxChild factorX={0.2} factorY={0.3} className='relative'>
             <div className='flex flex-col lg:flex-row items-center text-center lg:text-left flex-1 px-6'>
-              {/* pizza image */}
+              {/* image */}
               <div className='flex-1 flex justify-end max-w-sm lg:max-w-max'>
                 <Image
                   src={'/pizza-banner.png'}
