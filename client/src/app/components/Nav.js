@@ -11,7 +11,7 @@ const Nav = () => {
       <div className='container mx-auto flex flex-col lg:flex-row gap-y-3 justify-between items-center'>
         {/* logo */}
         <Link href={'#'} className='max-w-[160px] lg:max-w-max'>
-          <Image src={'logo.svg'} width={180} height={180} />
+          <Image src={'logo.svg'} width={180} height={180} alt='' />
         </Link>
         {/* phone & cart */}
         <div className='flex gap-x-8 items-center'>

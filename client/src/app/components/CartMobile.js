@@ -4,13 +4,16 @@ import { useContext } from 'react';
 import Link from 'next/link';
 // icons
 import { IoCloseOutline } from 'react-icons/io5';
+import { FaTrash } from 'react-icons/fa';
 // components
 import CartItem from './CartItem';
 // cart context
 import { CartContext } from '../context/CartContext';
+import CartBottom from './CartBottom';
 
 const CartMobile = () => {
-  const { isOpen, setIsOpen, cart } = useContext(CartContext);
+  const { isOpen, setIsOpen, cart, cartTotal, itemAmount, clearCart } =
+    useContext(CartContext);
   return (
     <div
       className={`${
@@ -19,7 +22,7 @@ const CartMobile = () => {
     >
       {/* close icon */}
       <div onClick={() => setIsOpen(false)} className='cursor-pointer'>
-        <IoCloseOutline className='text-3xl' />
+        <IoCloseOutline className='text-3xl text-white' />
       </div>
       {/* items */}
       <div
@@ -33,7 +36,9 @@ const CartMobile = () => {
           return <CartItem pizza={pizza} />;
         })}
       </div>
-      <Link href={'/checkout'}>Checkout</Link>
+      {/* cart bottom */}
+      <CartBottom />
+      {/* <Link href={'/checkout'}>Checkout</Link> */}
     </div>
   );
 };
