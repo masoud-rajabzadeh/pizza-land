@@ -8,12 +8,8 @@ import { IoCloseOutline } from 'react-icons/io5';
 import { CartContext } from '../context/CartContext';
 
 const CartItem = ({ pizza }) => {
-  const {
-    removeItem,
-
-    increaseAmount,
-    decreaseAmount,
-  } = useContext(CartContext);
+  const { removeItem, increaseAmount, decreaseAmount } =
+    useContext(CartContext);
   return (
     <div className='text-white select-none'>
       <div className='flex gap-x-4 mb-2'>

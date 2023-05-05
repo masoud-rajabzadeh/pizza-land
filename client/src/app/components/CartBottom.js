@@ -1,14 +1,13 @@
 import React, { useContext } from 'react';
 // icons
 import { FaTrash } from 'react-icons/fa';
-// context
-import { CartContext } from '../context/CartContext';
 // next link
 import Link from 'next/link';
+// context
+import { CartContext } from '../context/CartContext';
 
 const CartBottom = () => {
-  const { isOpen, setIsOpen, cart, cartTotal, clearCart } =
-    useContext(CartContext);
+  const { setIsOpen, cart, cartTotal, clearCart } = useContext(CartContext);
   return (
     <>
       {cart.length >= 1 ? (
