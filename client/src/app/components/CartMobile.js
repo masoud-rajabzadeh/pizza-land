@@ -4,7 +4,6 @@ import { useContext } from 'react';
 import Link from 'next/link';
 // icons
 import { IoCloseOutline } from 'react-icons/io5';
-import { BsHandbagFill } from 'react-icons/bs';
 // components
 import CartItem from './CartItem';
 // cart context
@@ -22,7 +21,14 @@ const CartMobile = () => {
       <div onClick={() => setIsOpen(false)} className='cursor-pointer'>
         <IoCloseOutline className='text-3xl' />
       </div>
-      <div>
+      {/* items */}
+      <div
+        className={`px-4 flex flex-col gap-y-4 py-2 mr-4 mt-8 h-[60vh] overflow-y-scroll scrollbar-thin scrollbar-thumb-secondary ${
+          cart.length >= 3
+            ? 'scrollbar-track-white/10'
+            : 'scrollbar-track-transparent'
+        }`}
+      >
         {cart.map((pizza) => {
           return <CartItem pizza={pizza} />;
         })}

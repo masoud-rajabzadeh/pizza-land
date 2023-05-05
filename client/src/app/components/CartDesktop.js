@@ -28,7 +28,7 @@ const CartDesktop = () => {
       {/* item list */}
       <div
         className={`px-10 flex flex-col gap-y-4 h-[70vh] py-2 mr-4 mt-8 overflow-y-scroll scrollbar-thin scrollbar-thumb-secondary ${
-          cart.length > 3
+          cart.length >= 3
             ? 'scrollbar-track-white/10'
             : 'scrollbar-track-transparent'
         } `}

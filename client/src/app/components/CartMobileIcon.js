@@ -1,13 +1,12 @@
 'use client';
 import { useContext } from 'react';
-import Image from 'next/image';
 // cart context
 import { CartContext } from '../context/CartContext';
 // react icons
 import { BsHandbagFill } from 'react-icons/bs';
 
 const CartMobileIcon = () => {
-  const { isOpen, setIsOpen } = useContext(CartContext);
+  const { isOpen, setIsOpen, itemAmount } = useContext(CartContext);
   return (
     <div
       onClick={() => setIsOpen(!isOpen)}
@@ -16,7 +15,7 @@ const CartMobileIcon = () => {
       <BsHandbagFill className='text-4xl' />
       {/* <Image src={'bag.svg'} width={32} height={32} alt='' /> */}
       <span className='absolute bottom-3 right-4 bg-primary text-white w-5 h-5 flex justify-center items-center rounded-full font-raleway text-base'>
-        0
+        {itemAmount}
       </span>
     </div>
   );
