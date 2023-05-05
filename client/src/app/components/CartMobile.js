@@ -18,7 +18,7 @@ const CartMobile = () => {
     <div
       className={`${
         isOpen ? 'bottom-0' : '-bottom-full'
-      } fixed w-full h-full left-0 bg-tertiary transition-all duration-300 lg:hidden z-10`}
+      } fixed w-full h-full left-0 bg-tertiary transition-all duration-300 lg:hidden z-20`}
     >
       {/* close icon */}
       <div onClick={() => setIsOpen(false)} className='cursor-pointer'>
@@ -33,7 +33,7 @@ const CartMobile = () => {
         }`}
       >
         {cart.map((pizza) => {
-          return <CartItem pizza={pizza} />;
+          return <CartItem pizza={pizza} key={pizza.id} />;
         })}
       </div>
       {/* cart bottom */}

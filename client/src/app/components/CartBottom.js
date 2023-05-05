@@ -3,9 +3,12 @@ import React, { useContext } from 'react';
 import { FaTrash } from 'react-icons/fa';
 // context
 import { CartContext } from '../context/CartContext';
+// next link
+import Link from 'next/link';
 
 const CartBottom = () => {
-  const { cart, cartTotal, clearCart } = useContext(CartContext);
+  const { isOpen, setIsOpen, cart, cartTotal, clearCart } =
+    useContext(CartContext);
   return (
     <>
       {cart.length >= 1 ? (
@@ -26,9 +29,13 @@ const CartBottom = () => {
             <button className='btn btn-lg btn-secondary text-tertiary font-bold'>
               View cart
             </button>
-            <button className='btn btn-lg btn-primary font-bold'>
+            <Link
+              href={'/checkout'}
+              className='btn btn-lg btn-primary font-medium flex justify-center'
+              onClick={() => setIsOpen(false)}
+            >
               Checkout
-            </button>
+            </Link>
           </div>
         </div>
       ) : (

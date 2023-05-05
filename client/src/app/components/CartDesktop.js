@@ -34,7 +34,7 @@ const CartDesktop = () => {
         } `}
       >
         {cart.map((pizza) => {
-          return <CartItem pizza={pizza} />;
+          return <CartItem pizza={pizza} key={pizza.id} />;
         })}
       </div>
       {/* cart bottom */}

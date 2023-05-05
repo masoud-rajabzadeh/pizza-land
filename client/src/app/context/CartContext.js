@@ -103,7 +103,6 @@ const CartProvider = ({ children }) => {
     const itemIndex = cart.findIndex(
       (item) => item.id === id && item.price === price
     );
-    console.log(itemIndex);
 
     if (itemIndex !== -1) {
       const newCart = [...cart];
