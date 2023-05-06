@@ -38,6 +38,6 @@
   }
   .input,
   .textarea {
-    @apply outline-1 focus:outline-dashed focus:outline-[#222222] rounded-lg border border-[#E4E4E4] font-semibold placeholder:text-[#767676] placeholder:text-[15px] placeholder:font-semibold;
+    @apply outline-1 focus:outline-dashed focus:outline-[#222222] rounded-lg border font-semibold placeholder:text-[#767676] placeholder:text-[15px] placeholder:font-semibold;
   }
 }
