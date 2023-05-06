@@ -37,7 +37,7 @@ const CartBottom = () => {
   return (
     <>
       {cart.length >= 1 ? (
-        <div className='px-6 lg:py-6 text-white'>
+        <div className='px-6 py-3 lg:py-6 text-white'>
           {/* clear cart btn & price cart price */}
           <div className='flex items-center justify-between mb-6'>
             <button
