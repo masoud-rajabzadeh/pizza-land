@@ -46,7 +46,7 @@ const CartBottom = () => {
             >
               <FaTrash />
             </button>
-            <div className='text-lg'>
+            <div className='text-lg font-medium'>
               Total: $ {parseFloat(cartTotal).toFixed(2)}
             </div>
           </div>

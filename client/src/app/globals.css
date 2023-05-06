@@ -7,11 +7,9 @@
   transition: opacity 200ms ease-in-out;
   z-index: 100;
 }
-
 .ReactModal__Overlay--after-open {
   opacity: 1;
 }
-
 .ReactModal__Overlay--before-close {
   opacity: 0;
 }
@@ -31,5 +29,15 @@
   }
   .btn-secondary {
     @apply bg-secondary text-white hover:bg-secondary/90;
+  }
+  .input {
+    @apply py-4 px-6;
+  }
+  .textarea {
+    @apply resize-none py-4 px-6;
+  }
+  .input,
+  .textarea {
+    @apply outline-1 focus:outline-dashed focus:outline-[#222222] rounded-lg border border-[#E4E4E4] font-semibold placeholder:text-[#767676] placeholder:text-[15px] placeholder:font-semibold;
   }
 }

@@ -17,12 +17,14 @@ const CartItem = ({ pizza }) => {
           <Image src={pizza.image} width={90} height={90} alt='' />
         </div>
         <div className='flex-1 flex flex-col gap-y-1'>
-          <div className='text-lg capitalize font-medium'>
-            pizza {pizza.name}
-          </div>
+          <div className='text-lg capitalize font-medium'>{pizza.name}</div>
           <div className='flex flex-col gap-y-1'>
-            <div className='capitalize'>{pizza.crust} crust</div>
-            <div className='capitalize mb-2'>{pizza.size} size</div>
+            <div className='capitalize font-light text-[15px]'>
+              {pizza.crust} crust
+            </div>
+            <div className='capitalize mb-2 font-light text-[15px]'>
+              {pizza.size} size
+            </div>
             {/* quantity controls */}
             <div className='flex items-center gap-x-1'>
               <div
@@ -51,7 +53,7 @@ const CartItem = ({ pizza }) => {
             <IoCloseOutline />
           </div>
           <div className='capitalize'>
-            <span className='text-lg'>
+            <span className='text-lg font-medium'>
               $ {parseFloat(pizza.price * pizza.amount).toFixed(2)}
             </span>
           </div>

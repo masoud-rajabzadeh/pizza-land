@@ -65,7 +65,7 @@ const PizzaDetails = ({ pizza, setModal }) => {
             {/* name */}
             <div className='font-semibold'>
               {/* name */}
-              <h2 className='capitalize text-3xl mb-1'>Pizza {pizza.name}</h2>
+              <h2 className='capitalize text-3xl mb-1'>{pizza.name}</h2>
               {/* size & crust text */}
               <div className='mb-6 text-lg font-medium'>
                 <span>
