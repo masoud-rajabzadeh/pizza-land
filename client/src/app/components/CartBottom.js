@@ -86,7 +86,7 @@ const CartBottom = () => {
           >
             <IoCloseOutline className='text-4xl text-red-400' />
           </div>
-          <CheckoutDetails />
+          <CheckoutDetails setModal={setModal} />
         </Modal>
       )}
     </>
