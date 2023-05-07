@@ -79,7 +79,7 @@ const CheckoutDetails = () => {
               <div>Subtotal</div>
             </div> */}
             {/* items */}
-            <div className='overflow-y-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white-500 font-medium flex flex-col gap-y-2  h-[180px]'>
+            <div className='overflow-y-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white-500 font-medium flex flex-col gap-y-2  h-[230px] pr-2'>
               {cart.map((pizza, index) => {
                 return (
                   <div
