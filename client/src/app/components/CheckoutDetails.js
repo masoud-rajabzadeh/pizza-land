@@ -70,7 +70,7 @@ const CheckoutDetails = () => {
 
         <div className='h-full flex-1 lg:max-w-[40%] flex flex-col justify-between pt-3 px-8 lg:p-0'>
           <div className='border rounded-lg flex flex-col mb-4 p-4 h-full'>
-            <h3 className='text-base font-extrabold uppercase mb-2 border-b pb-3'>
+            <h3 className='text-base font-extrabold uppercase mb-3 border-b pb-3'>
               Your order
             </h3>
             {/* product & subtotal */}
@@ -98,7 +98,7 @@ const CheckoutDetails = () => {
               })}
             </div>
             {/* total */}
-            <div className='mt-auto border-t pt-4 flex justify-between font-bold uppercase text-sm'>
+            <div className='mt-auto border-t pt-4 flex justify-between font-bold uppercase'>
               <div>Total</div>
               <div>{parseFloat(cartTotal).toFixed(2)}</div>
             </div>

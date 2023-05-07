@@ -30,6 +30,9 @@
   .btn-secondary {
     @apply bg-secondary text-white hover:bg-secondary/90;
   }
+  .btn-gradient {
+    @apply bg-gradient-to-tr from-[#f43600] to-[#fe8c00] text-white;
+  }
   .input {
     @apply py-4 px-6;
   }
@@ -38,6 +41,6 @@
   }
   .input,
   .textarea {
-    @apply outline-1 focus:outline-dashed focus:outline-[#222222] rounded-lg border font-semibold placeholder:text-[#767676] placeholder:text-[15px] placeholder:font-semibold;
+    @apply outline-1 focus:outline-double focus:outline-tertiary rounded-lg border font-semibold placeholder:text-[#767676] placeholder:text-[15px] placeholder:font-semibold;
   }
 }
