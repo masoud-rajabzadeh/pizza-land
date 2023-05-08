@@ -24,7 +24,7 @@ const CheckoutDetails = ({ setModal }) => {
   // close modal after 5 seconds
   useEffect(() => {
     if (successMsg) {
-      const timer = setInterval(() => {
+      const timer = setTimeout(() => {
         // set successMsg to default
         setSuccessMsg(false);
         // clear the cart
@@ -32,7 +32,7 @@ const CheckoutDetails = ({ setModal }) => {
         // close the modal
         setModal(false);
       }, 5000);
-      return () => clearInterval(timer);
+      return () => clearTimeout(timer);
     }
   }, [successMsg]);
 
