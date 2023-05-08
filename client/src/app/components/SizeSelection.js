@@ -14,7 +14,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             height={60}
             className={`${
               size === 'small'
-                ? 'border-[3px] border-red-500 p-[2px] rounded-full'
+                ? 'border-[3px] border-orange-500 p-[2px] rounded-full'
                 : 'border-transparent filter saturate-[.1]'
             }`}
             alt=''
@@ -36,7 +36,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             height={70}
             className={`${
               size === 'medium'
-                ? 'border-[3px] border-red-500 p-[2px] rounded-full'
+                ? 'border-[3px] border-orange-500 p-[2px] rounded-full'
                 : 'border-transparent filter saturate-[.1]'
             }`}
             alt=''
@@ -58,7 +58,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             height={80}
             className={`${
               size === 'large'
-                ? 'border-[3px] border-red-500 p-[2px] rounded-full'
+                ? 'border-[3px] border-orange-500 p-[2px] rounded-full'
                 : 'border-transparent filter saturate-[.1]'
             }`}
             alt=''

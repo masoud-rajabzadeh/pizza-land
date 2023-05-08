@@ -131,11 +131,11 @@ const CheckoutDetails = ({ setModal }) => {
                   Your order
                 </h3>
                 {/* items */}
-                <div className='overflow-y-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white-500 font-semibold flex flex-col gap-y-2 h-[250px]'>
+                <div className='overflow-y-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white-500 font-semibold flex flex-col gap-y-4 h-[250px] py-2'>
                   {cart.map((pizza, index) => {
                     return (
                       <div
-                        className='flex justify-between text-[#767676]'
+                        className='flex justify-between text-[#767676] text-[15px]'
                         key={index}
                       >
                         <div className='flex gap-x-2'>
