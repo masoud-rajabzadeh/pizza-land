@@ -37,25 +37,15 @@ const CartBottom = () => {
   return (
     <>
       {cart.length >= 1 ? (
-        <div className='px-6 py-3 lg:py-6 text-white'>
+        <div className='px-6 py-3 lg:py-6 text-black'>
           {/* clear cart btn & price cart price */}
-          <div className='flex items-center justify-between mb-6'>
-            <button
-              onClick={() => clearCart()}
-              className='w-12 h-12 btn-primary rounded-xl flex justify-center items-center'
-            >
-              <FaTrash />
-            </button>
-            <div className='text-lg font-medium'>
-              Total: $ {parseFloat(cartTotal).toFixed(2)}
-            </div>
+          <div className='flex items-center justify-between mb-6 text-lg font-bold'>
+            <div>Total:</div>
+            <div>${parseFloat(cartTotal).toFixed(2)}</div>
           </div>
           <div className='flex flex-col gap-y-3'>
-            <button className='btn btn-lg btn-secondary text-tertiary font-bold'>
-              View cart
-            </button>
             <button
-              className='btn btn-lg btn-primary font-medium flex justify-center '
+              className='btn btn-lg gradient font-medium flex justify-center'
               onClick={() => {
                 setIsOpen(false), openModal(true);
               }}

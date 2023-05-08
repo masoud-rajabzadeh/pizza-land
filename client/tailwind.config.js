@@ -32,7 +32,7 @@ module.exports = {
         tertiary: '#331812',
       },
       backgroundImage: {
-        'banner-pattern': "url('/pattern.png')",
+        pattern: "url('/pattern.png')",
       },
     },
   },

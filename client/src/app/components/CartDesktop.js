@@ -13,15 +13,15 @@ const CartDesktop = () => {
     <div
       className={`${
         isOpen ? 'left-0' : '-left-full'
-      } bg-tertiary fixed top-0 bottom-0 w-[500px] shadow-2xl hidden lg:flex flex-col transition-all duration-300`}
+      } bg-white fixed top-0 bottom-0 w-[500px] shadow-2xl hidden lg:flex flex-col transition-all duration-300`}
     >
       {/* cart top */}
       <CartTop />
       {/* item list */}
       <div
-        className={`px-10 flex flex-col gap-y-4 h-[70vh] py-2 mr-4 mt-8 overflow-y-scroll scrollbar-thin scrollbar-thumb-secondary ${
+        className={`px-10 flex flex-col gap-y-4 h-[70vh] py-2 mr-4 mt-8 overflow-y-scroll scrollbar-thin scrollbar-thumb-orange-400 ${
           cart.length >= 3
-            ? 'scrollbar-track-white/10'
+            ? 'scrollbar-track-black/10'
             : 'scrollbar-track-transparent'
         } `}
       >

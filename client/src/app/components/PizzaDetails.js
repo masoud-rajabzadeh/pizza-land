@@ -121,7 +121,7 @@ const PizzaDetails = ({ pizza, setModal }) => {
               ),
                 setModal(false);
             }}
-            className='btn btn-lg btn-primary w-full flex justify-center gap-x-2'
+            className='btn btn-lg gradient w-full flex justify-center gap-x-2'
           >
             <div>Add to cart for</div>
             <div>$ {price}</div>

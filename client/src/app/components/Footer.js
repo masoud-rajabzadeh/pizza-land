@@ -12,7 +12,7 @@ import {
 
 const Footer = () => {
   return (
-    <footer className='bg-primary py-16'>
+    <footer className='bg-primary bg-pattern py-16'>
       <div className='container mx-auto'>
         <div className='flex flex-col items-center gap-y-6 justify-center'>
           {/* logo */}

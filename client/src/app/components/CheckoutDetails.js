@@ -158,7 +158,7 @@ const CheckoutDetails = ({ setModal }) => {
               {/* place order button */}
               <button
                 onClick={() => setSuccessMsg(true)}
-                className='btn btn-lg btn-primary w-full'
+                className='btn btn-lg gradient grad w-full'
               >
                 Place order
               </button>
