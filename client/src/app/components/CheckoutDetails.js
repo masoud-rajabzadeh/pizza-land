@@ -7,28 +7,47 @@ import { CartContext } from '../context/CartContext';
 const CheckoutDetails = ({ setModal }) => {
   const { cart, cartTotal } = useContext(CartContext);
   const [successMsg, setSuccessMsg] = useState(false);
+  const [count, setCount] = useState(5);
 
-  // close modal after 4 seconds
+  // counter
   useEffect(() => {
     if (successMsg) {
       const timer = setTimeout(() => {
-        setModal(false);
-        setSuccessMsg(false);
-      }, 4000);
-      return () => clearInterval(timer);
+        if (count > 1) {
+          setCount(count - 1);
+        }
+      }, 1000);
+      return () => clearTimeout(timer);
     }
   });
+
+  // close modal after 5 seconds
+  useEffect(() => {
+    if (successMsg) {
+      const timer = setInterval(() => {
+        setSuccessMsg(false);
+        setModal(false);
+      }, 5000);
+      return () => clearInterval(timer);
+    }
+  }, [successMsg]);
 
   return (
     <div>
       {successMsg ? (
-        <div className='flex flex-col justify-center items-center h-[600px]'>
-          <h2 className='text-3xl font-bold'>Your order has been placed</h2>
-          <Image src={'/success-1.gif'} width={200} height={200} alt='' />
+        <div className='flex flex-col justify-center items-center h-[100vh] lg:h-[600px] px-6'>
+          <h2 className='text-2xl font-semibold text-center'>
+            Your order has been placed !
+          </h2>
+          <Image src={'/success-1.gif'} width={150} height={150} alt='' />
+          <div className='text-lg text-center'>
+            You'll be redirected to the homepage in{' '}
+            <span className='font-bold'>{count}</span> seconds
+          </div>
         </div>
       ) : (
         <div className='lg:gap-x-8 h-full lg:px-12 lg:py-8'>
-          <h2 className='mb-6 text-[20px] uppercase font-extrabold text-center lg:text-left'>
+          <h2 className='mb-6 text-[20px] uppercase font-extrabold text-center lg:text-left pt-6 lg:pt-0'>
             Shipping & Checkout
           </h2>
           <div className='h-[86vh] lg:h-[47.5vh] flex flex-col lg:flex-row lg:gap-x-4'>
@@ -104,11 +123,11 @@ const CheckoutDetails = ({ setModal }) => {
 
             <div className='h-full flex-1 lg:max-w-[40%] flex flex-col justify-between pt-3 px-8 lg:p-0'>
               <div className='border rounded-lg flex flex-col mb-4 p-4 h-full'>
-                <h3 className='text-base font-extrabold uppercase mb-3 border-b pb-3'>
+                <h3 className='text-base font-extrabold uppercase mb-4 border-b pb-4'>
                   Your order
                 </h3>
                 {/* items */}
-                <div className='overflow-y-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white-500 font-semibold flex flex-col gap-y-2 h-[230px]'>
+                <div className='overflow-y-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white-500 font-semibold flex flex-col gap-y-2 h-[250px]'>
                   {cart.map((pizza, index) => {
                     return (
                       <div
