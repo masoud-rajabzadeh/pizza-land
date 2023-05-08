@@ -124,6 +124,7 @@ const CartProvider = ({ children }) => {
         isOpen,
         setIsOpen,
         cart,
+        setCart,
         addToCart,
         removeItem,
         cartTotal,

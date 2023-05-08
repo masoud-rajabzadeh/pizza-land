@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { CartContext } from '../context/CartContext';
 
 const CheckoutDetails = ({ setModal }) => {
-  const { cart, cartTotal } = useContext(CartContext);
+  const { cart, setCart, cartTotal } = useContext(CartContext);
   const [successMsg, setSuccessMsg] = useState(false);
   const [count, setCount] = useState(5);
 
@@ -25,7 +25,11 @@ const CheckoutDetails = ({ setModal }) => {
   useEffect(() => {
     if (successMsg) {
       const timer = setInterval(() => {
+        // set successMsg to default
         setSuccessMsg(false);
+        // clear the cart
+        setCart([]);
+        // close the modal
         setModal(false);
       }, 5000);
       return () => clearInterval(timer);
