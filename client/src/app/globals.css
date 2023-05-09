@@ -14,10 +14,14 @@
   opacity: 0;
 }
 
-.gradient {
+/* .gradient {
   background-image: linear-gradient(90deg, #ed4d1c 30%, #feb331 147.14%);
   color: white;
 }
+.gradient:hover {
+  background-image: linear-gradient(240deg, #ed4d1c 30%, #feb331 147.14%);
+  color: white;
+} */
 
 @layer base {
   body {
@@ -46,6 +50,9 @@
   }
   .input,
   .textarea {
-    @apply outline-1 focus:outline-double focus:outline-tertiary rounded-lg border font-semibold placeholder:text-[#767676] placeholder:text-[15px] placeholder:font-semibold;
+    @apply outline-1 focus:outline-double focus:outline-orange rounded-lg border font-semibold placeholder:text-[#767676] placeholder:text-[15px] placeholder:font-semibold;
+  }
+  .gradient {
+    @apply bg-gradient-to-r to-primary via-orange from-primary bg-size-200 bg-pos-0 hover:bg-pos-100;
   }
 }

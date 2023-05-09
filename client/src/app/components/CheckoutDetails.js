@@ -39,7 +39,7 @@ const CheckoutDetails = ({ setModal }) => {
   return (
     <div>
       {successMsg ? (
-        <div className='flex flex-col justify-center items-center h-[100vh] lg:h-[600px] px-6 bg-pink-100'>
+        <div className='flex flex-col justify-center items-center h-[100vh] lg:h-[600px] px-6'>
           <h2 className='text-2xl font-semibold text-center'>
             Your order has been placed !
           </h2>
