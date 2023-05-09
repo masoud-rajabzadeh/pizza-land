@@ -6,7 +6,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
   return (
     <div className='mx-auto max-w-sm lg:max-w-none flex items-center justify-center lg:justify-start'>
       {/* sizes */}
-      <div className='flex gap-x-12 items-center mb-6'>
+      <div className='flex gap-x-12 items-baseline mb-10'>
         <label className='flex flex-col items-center gap-x-2 cursor-pointer'>
           <Image
             src={pizza.image}
@@ -14,7 +14,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             height={60}
             className={`${
               size === 'small'
-                ? 'border-[3px] border-orange-500 p-[2px] rounded-full'
+                ? 'border-2 border-orange p-[2px] rounded-full'
                 : 'border-transparent filter saturate-[.1]'
             }`}
             alt=''
@@ -25,7 +25,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             value='small'
             checked={size === 'small'}
             onChange={(e) => setSize(e.target.value)}
-            className='appearance-none'
+            className='appearance-none mb-1'
           />
           Small
         </label>
@@ -36,7 +36,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             height={70}
             className={`${
               size === 'medium'
-                ? 'border-[3px] border-orange-500 p-[2px] rounded-full'
+                ? 'border-2 border-orange p-[2px] rounded-full'
                 : 'border-transparent filter saturate-[.1]'
             }`}
             alt=''
@@ -47,7 +47,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             value='medium'
             checked={size === 'medium'}
             onChange={(e) => setSize(e.target.value)}
-            className='appearance-none'
+            className='appearance-none mb-1'
           />
           Medium
         </label>
@@ -58,7 +58,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             height={80}
             className={`${
               size === 'large'
-                ? 'border-[3px] border-orange-500 p-[2px] rounded-full'
+                ? 'border-2 border-orange p-[2px] rounded-full'
                 : 'border-transparent filter saturate-[.1]'
             }`}
             alt=''
@@ -69,7 +69,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
             value='large'
             checked={size === 'large'}
             onChange={(e) => setSize(e.target.value)}
-            className='appearance-none'
+            className='appearance-none mb-1'
           />
           Large
         </label>

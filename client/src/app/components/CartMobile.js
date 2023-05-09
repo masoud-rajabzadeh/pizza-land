@@ -13,7 +13,7 @@ const CartMobile = () => {
     <div
       className={`${
         isOpen ? 'bottom-0' : '-bottom-full'
-      } fixed w-full h-full left-0 bg-tertiary transition-all duration-300 lg:hidden z-20`}
+      } fixed w-full h-full left-0 bg-white transition-all duration-300 lg:hidden z-20 flex flex-col`}
     >
       {/* cart top */}
       <CartTop />
@@ -31,7 +31,6 @@ const CartMobile = () => {
       </div>
       {/* cart bottom */}
       <CartBottom />
-      {/* <Link href={'/checkout'}>Checkout</Link> */}
     </div>
   );
 };

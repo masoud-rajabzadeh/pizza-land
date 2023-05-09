@@ -7,7 +7,7 @@ import { CartContext } from '../context/CartContext';
 const CartTop = () => {
   const { setIsOpen, itemAmount } = useContext(CartContext);
   return (
-    <div className='w-full h-20 flex items-center justify-between px-10 text-black border-b'>
+    <div className='w-full h-20 flex items-center justify-between px-10 border-b'>
       <div className='font-semibold'>Shopping Bag({itemAmount})</div>
       {/* close icon */}
       <div onClick={() => setIsOpen(false)} className='cursor-pointer group'>

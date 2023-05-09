@@ -39,7 +39,7 @@ const CheckoutDetails = ({ setModal }) => {
   return (
     <div>
       {successMsg ? (
-        <div className='flex flex-col justify-center items-center h-[100vh] lg:h-[600px] px-6'>
+        <div className='flex flex-col justify-center items-center h-[100vh] lg:h-[600px] px-6 bg-pink-100'>
           <h2 className='text-2xl font-semibold text-center'>
             Your order has been placed !
           </h2>
@@ -131,7 +131,7 @@ const CheckoutDetails = ({ setModal }) => {
                   Your order
                 </h3>
                 {/* items */}
-                <div className='overflow-y-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white-500 font-semibold flex flex-col gap-y-4 h-[250px] py-2'>
+                <div className='overflow-y-scroll overflow-hidden scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white-500 font-semibold flex flex-col gap-y-4 h-[240px] py-2'>
                   {cart.map((pizza, index) => {
                     return (
                       <div

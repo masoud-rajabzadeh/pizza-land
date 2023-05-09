@@ -11,7 +11,7 @@ const CartItem = ({ pizza }) => {
   const { removeItem, increaseAmount, decreaseAmount } =
     useContext(CartContext);
   return (
-    <div className='text-black select-none'>
+    <div className='select-none'>
       <div className='flex gap-x-4 mb-2'>
         <div className='flex justify-center items-center'>
           <Image src={pizza.image} width={90} height={90} alt='' />

@@ -63,14 +63,14 @@ const Pizza = ({ pizza }) => {
         {/* btn -> hidden (sm) - visible (lg) */}
         <button
           onClick={openModal}
-          className='hidden lg:flex btn gradient btn-sm text-sm'
+          className='hidden lg:flex gradient text-white rounded-lg font-medium btn-sm text-sm'
         >
           Choose
         </button>
         {/* btn -> visible (sm) - hidden (lg) */}
         <button
           onClick={openModal}
-          className='btn btn-primary btn-sm lg:hidden px-3'
+          className='btn btn-sm gradient lg:hidden px-3'
         >
           starts at $9.99
         </button>

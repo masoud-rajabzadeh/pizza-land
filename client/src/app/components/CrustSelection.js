@@ -10,7 +10,8 @@ const CrustSelection = ({ crust, setCrust }) => {
             value='traditional'
             checked={crust === 'traditional'}
             onChange={(e) => setCrust(e.target.value)}
-            className='h-4 w-4 rounded-full border border-red-500 appearance-none checked:bg-red-500 checked:border-transparent cursor-pointer'
+            className='h-4 w-4 rounded-full border border-gray-400 appearance-none checked:bg-gradient-to-r checked:from-primary checked:to-secondary
+            checked:border-secondary cursor-pointer'
           />
           Traditional
         </label>
@@ -21,7 +22,8 @@ const CrustSelection = ({ crust, setCrust }) => {
             value='thin'
             checked={crust === 'thin'}
             onChange={(e) => setCrust(e.target.value)}
-            className='h-4 w-4 rounded-full border border-red-500 appearance-none checked:bg-red-500 checked:border-transparent cursor-pointer'
+            className='h-4 w-4 rounded-full border border-gray-400 appearance-none checked:bg-gradient-to-r checked:from-primary checked:to-secondary
+            checked:border-secondary cursor-pointer'
           />
           Thin
         </label>

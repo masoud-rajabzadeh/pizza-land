@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 // icons
-import { FaTrash } from 'react-icons/fa';
 import { IoCloseOutline } from 'react-icons/io5';
 // components
 import CheckoutDetails from './CheckoutDetails';
@@ -20,7 +19,7 @@ const modalStyles = {
 };
 
 const CartBottom = () => {
-  const { setIsOpen, cart, cartTotal, clearCart } = useContext(CartContext);
+  const { setIsOpen, cart, cartTotal } = useContext(CartContext);
   // modal state
   const [modal, setModal] = useState(false);
 
@@ -37,7 +36,7 @@ const CartBottom = () => {
   return (
     <>
       {cart.length >= 1 ? (
-        <div className='px-6 py-3 lg:py-6 text-black'>
+        <div className='px-6 py-3 lg:py-6 mt-auto'>
           {/* clear cart btn & price cart price */}
           <div className='flex items-center justify-between mb-6 text-lg font-bold'>
             <div>Total:</div>
@@ -56,7 +55,7 @@ const CartBottom = () => {
         </div>
       ) : (
         <div className='absolute top-0 w-full h-full flex justify-center items-center -z-10'>
-          <div className='text-white text-xl'>Your cart is empty</div>
+          <div className='font-semibold'>Your cart is empty</div>
         </div>
       )}
       {modal && (
@@ -74,7 +73,7 @@ const CartBottom = () => {
             className='absolute z-30 right-2 top-2 text-2xl cursor-pointer'
             onClick={closeModal}
           >
-            <IoCloseOutline className='text-4xl text-red-400' />
+            <IoCloseOutline className='text-4xl text-orange' />
           </div>
           <CheckoutDetails setModal={setModal} />
         </Modal>

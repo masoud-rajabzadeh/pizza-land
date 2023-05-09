@@ -33,13 +33,17 @@ const Topping = ({ topping, additionalTopping, setAdditionalTopping }) => {
   return (
     <div
       className={`${
-        isChecked && 'border-red-400'
-      } w-full max-w-[110px] h-[150px] p-2 flex flex-col items-center justify-center rounded-md bg-white border relative`}
+        isChecked && 'border-orange'
+      } w-full max-w-[110px] h-[140px] p-1 flex flex-col items-center justify-center rounded-md bg-white border relative`}
     >
-      <Image width={70} height={70} src={topping.image} alt='' />
-      <div className='text-md capitalize font-medium text-center'>
-        {topping.name}
-      </div>
+      <Image
+        src={topping.image}
+        width={70}
+        height={70}
+        alt=''
+        className='mb-2'
+      />
+      <div className='text-sm capitalize text-center'>{topping.name}</div>
       <input
         className='absolute w-full h-full opacity-0 cursor-pointer'
         type='checkbox'
@@ -52,7 +56,7 @@ const Topping = ({ topping, additionalTopping, setAdditionalTopping }) => {
           isChecked ? 'opacity-100' : 'opacity-0'
         } absolute top-1 right-1`}
       >
-        <IoMdCheckmark className='text-xl text-red-500' />
+        <IoMdCheckmark className='text-xl text-orange' />
       </div>
     </div>
   );

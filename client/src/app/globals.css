@@ -20,6 +20,9 @@
 }
 
 @layer base {
+  body {
+    @apply text-black;
+  }
   .btn {
     @apply rounded-xl font-semibold transition-all;
   }

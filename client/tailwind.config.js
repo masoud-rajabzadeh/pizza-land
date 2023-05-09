@@ -30,6 +30,8 @@ module.exports = {
         primary: '#d1411e',
         secondary: '#ffa323',
         tertiary: '#331812',
+        black: '#231714',
+        orange: '#FF7A30',
       },
       backgroundImage: {
         pattern: "url('/pattern.png')",
