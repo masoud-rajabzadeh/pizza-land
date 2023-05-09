@@ -48,12 +48,12 @@ const CartItem = ({ pizza }) => {
         <div className='flex flex-col justify-between'>
           <div
             onClick={() => removeItem(pizza.id, pizza.price)}
-            className='text-2xl flex justify-center items-center self-end cursor-pointer hover:scale-110 duration-100 transition-all'
+            className='text-2xl flex justify-center items-center self-end cursor-pointer hover:scale-110 duration-100 transition-all text-orange'
           >
             <IoCloseOutline />
           </div>
           <div className='capitalize'>
-            <span className='text-lg font-bold'>
+            <span className='text-lg font-medium font-robotoCondensed'>
               ${parseFloat(pizza.price * pizza.amount).toFixed(2)}
             </span>
           </div>

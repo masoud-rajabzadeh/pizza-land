@@ -38,7 +38,7 @@ const CartBottom = () => {
       {cart.length >= 1 ? (
         <div className='px-6 py-3 lg:py-6 mt-auto'>
           {/* clear cart btn & price cart price */}
-          <div className='flex items-center justify-between mb-6 text-lg font-bold'>
+          <div className='flex items-center justify-between mb-6 text-lg font-semibold font-robotoCondensed'>
             <div>Total:</div>
             <div>${parseFloat(cartTotal).toFixed(2)}</div>
           </div>
