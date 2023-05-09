@@ -43,7 +43,9 @@ const Topping = ({ topping, additionalTopping, setAdditionalTopping }) => {
         alt=''
         className='mb-2'
       />
-      <div className='text-sm capitalize text-center'>{topping.name}</div>
+      <div className='text-sm capitalize text-center font-medium'>
+        {topping.name}
+      </div>
       <input
         className='absolute w-full h-full opacity-0 cursor-pointer'
         type='checkbox'

@@ -11,7 +11,7 @@ const CartTop = () => {
       <div className='font-semibold'>Shopping Bag({itemAmount})</div>
       {/* close icon */}
       <div onClick={() => setIsOpen(false)} className='cursor-pointer group'>
-        <IoCloseOutline className='text-3xl transition-all group-hover:rotate-180 duration-300' />
+        <IoCloseOutline className='text-3xl transition-all group-hover:scale-110 duration-300' />
       </div>
     </div>
   );

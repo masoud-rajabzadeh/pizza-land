@@ -2,7 +2,7 @@ const CrustSelection = ({ crust, setCrust }) => {
   return (
     <div className='flex justify-center items-center lg:justify-start'>
       {/* crust */}
-      <div className='flex gap-x-12 mb-8'>
+      <div className='flex gap-x-12 mb-8 font-medium'>
         <label className='flex items-center gap-x-2 cursor-pointer'>
           <input
             type='radio'

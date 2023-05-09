@@ -44,7 +44,7 @@ const CartBottom = () => {
           </div>
           <div className='flex flex-col gap-y-3'>
             <button
-              className='btn btn-lg gradient font-medium flex justify-center'
+              className='btn btn-lg gradient font-semibold flex justify-center'
               onClick={() => {
                 setIsOpen(false), openModal(true);
               }}
@@ -70,7 +70,7 @@ const CartBottom = () => {
         >
           {/* close modal icon */}
           <div
-            className='absolute z-30 right-2 top-2 text-2xl cursor-pointer'
+            className='absolute z-30 right-2 top-2 text-2xl hover:scale-110 duration-200 cursor-pointer'
             onClick={closeModal}
           >
             <IoCloseOutline className='text-4xl text-orange' />

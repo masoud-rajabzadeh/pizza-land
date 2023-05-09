@@ -6,7 +6,7 @@ const SizeSelection = ({ pizza, size, setSize }) => {
   return (
     <div className='mx-auto max-w-sm lg:max-w-none flex items-center justify-center lg:justify-start'>
       {/* sizes */}
-      <div className='flex gap-x-12 items-baseline mb-10'>
+      <div className='flex gap-x-12 items-baseline mb-10 font-medium'>
         <label className='flex flex-col items-center gap-x-2 cursor-pointer'>
           <Image
             src={pizza.image}
