@@ -53,7 +53,7 @@ const CartItem = ({ pizza }) => {
             <IoCloseOutline />
           </div>
           <div className='capitalize'>
-            <span className='text-lg font-medium font-robotoCondensed'>
+            <span className='text-[17px] font-medium font-robotoCondensed'>
               ${parseFloat(pizza.price * pizza.amount).toFixed(2)}
             </span>
           </div>
