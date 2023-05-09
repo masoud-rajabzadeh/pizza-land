@@ -41,7 +41,7 @@ const CheckoutDetails = ({ setModal }) => {
       {successMsg ? (
         <div className='flex flex-col justify-center items-center h-[100vh] lg:h-[600px] px-6'>
           <h2 className='text-2xl font-semibold text-center'>
-            Thank you! The order has been placed !
+            Thank you! The order has been placed!
           </h2>
           <Image src={'/success-1.gif'} width={150} height={150} alt='' />
           <div className='text-lg text-center'>
