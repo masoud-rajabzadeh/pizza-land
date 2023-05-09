@@ -150,7 +150,7 @@ const CheckoutDetails = ({ setModal }) => {
                   })}
                 </div>
                 {/* total */}
-                <div className='mt-auto border-t pt-4 flex justify-between font-bold uppercase'>
+                <div className='mt-auto border-t pt-4 flex justify-between font-semibold uppercase font-robotoCondensed'>
                   <div>Total</div>
                   <div>$ {parseFloat(cartTotal).toFixed(2)}</div>
                 </div>
