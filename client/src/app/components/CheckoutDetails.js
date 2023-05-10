@@ -45,8 +45,8 @@ const CheckoutDetails = ({ setModal }) => {
           </h2>
           <Image src={'/success-1.gif'} width={150} height={150} alt='' />
           <div className='text-lg text-center'>
-            You'll be redirected to the homepage in{' '}
-            <span className='font-bold'>{count}</span> seconds
+            This window will close in <span className='font-bold'>{count}</span>{' '}
+            seconds
           </div>
         </div>
       ) : (

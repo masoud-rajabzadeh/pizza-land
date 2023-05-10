@@ -73,9 +73,9 @@ const CartProvider = ({ children }) => {
   };
 
   // remove item
-  const removeItem = (id, price) => {
+  const removeItem = (id, price, crust) => {
     const itemIndex = cart.findIndex(
-      (item) => item.id === id && item.price === price
+      (item) => item.id === id && item.price === price && item.crust === crust
     );
 
     if (itemIndex !== -1) {
