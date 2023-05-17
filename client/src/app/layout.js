@@ -1,17 +1,20 @@
 // css
 import './globals.css';
 
-// import font
+// components
+import Nav from './components/Nav';
+import CartMobileIcon from './components/CartMobileIcon';
+
+// provider
+import CartProvider from './context/CartContext';
+
+// import next fonts
 import { Bangers, Quicksand, Roboto_Condensed } from 'next/font/google';
 
 // components
-import Nav from './components/Nav';
-import Footer from './components/Footer';
-import CartMobileIcon from './components/CartMobileIcon';
 import CartMobile from './components/CartMobile';
 import CartDesktop from './components/CartDesktop';
-// provider
-import CartProvider from './context/CartContext';
+import Footer from './components/Footer';
 
 const quicksand = Quicksand({
   subsets: ['latin'],

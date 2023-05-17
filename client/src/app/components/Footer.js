@@ -16,23 +16,25 @@ const Footer = () => {
       <div className='container mx-auto'>
         <div className='flex flex-col items-center gap-y-6 justify-center'>
           {/* logo */}
-          <Link href={'#'} className='max-w-[160px] lg:max-w-max'>
+          <Link href={'#'}>
             <Image src={'logo.svg'} width={180} height={180} alt='' />
           </Link>
+          {/* social icons */}
           <div className='flex gap-x-6 text-xl text-white'>
-            <Link href={''}>
+            <Link href={'#'}>
               <FaYoutube />
             </Link>
-            <Link href={''}>
+            <Link href={'#'}>
               <FaFacebook />
             </Link>
-            <Link href={''}>
+            <Link href={'#'}>
               <FaInstagram />
             </Link>
-            <Link href={''}>
+            <Link href={'#'}>
               <FaPinterest />
             </Link>
           </div>
+          {/* copyright */}
           <div className='text-white font-medium'>
             Copyright &copy; Pizzaland 2023. All rights reserved.
           </div>

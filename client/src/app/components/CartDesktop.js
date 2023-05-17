@@ -1,5 +1,5 @@
 'use client';
-import { useContext } from 'react';
+import React, { useContext } from 'react';
 // components
 import CartItem from './CartItem';
 import CartBottom from './CartBottom';

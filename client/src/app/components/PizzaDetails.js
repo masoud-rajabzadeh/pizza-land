@@ -1,7 +1,7 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 // next image
 import Image from 'next/image';
-// import components
+// components
 import SizeSelection from './SizeSelection';
 import CrustSelection from './CrustSelection';
 import Topping from './Topping';
@@ -15,13 +15,14 @@ const PizzaDetails = ({ pizza, setModal }) => {
   const [crust, setCrust] = useState('traditional');
   // additional topping state
   const [additionalTopping, setAdditionalTopping] = useState([]);
-  // additional topping price state
+  // additional topping price
   const [additionalToppingPrice, setAdditionalToppingPrice] = useState(0);
-  // price price state
+  // price state
   const [price, setPrice] = useState(0);
 
   const { addToCart } = useContext(CartContext);
 
+  // set the price based on the pizza size
   useEffect(() => {
     size === 'small'
       ? setPrice(parseFloat(pizza.priceSm + additionalToppingPrice).toFixed(2))
@@ -32,6 +33,7 @@ const PizzaDetails = ({ pizza, setModal }) => {
       : null;
   });
 
+  // set additional topping price
   useEffect(() => {
     if (additionalTopping.length > 0) {
       const toppingPrice = additionalTopping.reduce((a, c) => {
@@ -45,6 +47,7 @@ const PizzaDetails = ({ pizza, setModal }) => {
 
   return (
     <div className='flex flex-col lg:flex-row lg:gap-x-8 h-full md:p-8'>
+      {/* top */}
       <div className='lg:flex-1 flex justify-center items-center'>
         {/* pizza image */}
         <div className='max-w-[300px] lg:max-w-none mt-6 lg:mt-0'>
@@ -54,17 +57,16 @@ const PizzaDetails = ({ pizza, setModal }) => {
             src={pizza.image}
             alt=''
             priority={1}
-            className='group-hover:translate-y-3 transition-all duration-300 mx-auto lg:mb-0 relative'
+            className='mx-auto relative'
           />
         </div>
       </div>
-      {/* pizza details */}
+      {/* details */}
       <div className='flex flex-col flex-1'>
         <div className='flex-1 p-2 text-center lg:text-left'>
-          <div className='flex-1 overflow-y-scroll h-[46vh] scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white-500 pr-2'>
+          <div className='flex-1 bg-white overflow-y-scroll h-[46vh] scrollbar-thin scrollbar-thumb-gray-200 scrollbar-track-white pr-2'>
             {/* name */}
             <div className='font-semibold'>
-              {/* name */}
               <h2 className='capitalize text-3xl mb-1'>{pizza.name}</h2>
               {/* size & crust text */}
               <div className='mb-6 text-lg font-medium'>
@@ -80,14 +82,9 @@ const PizzaDetails = ({ pizza, setModal }) => {
                 <span>, {crust} crust</span>
               </div>
             </div>
-            {/* size */}
-            <SizeSelection
-              pizza={pizza}
-              id={pizza.id}
-              size={size}
-              setSize={setSize}
-              crust={crust}
-            />
+            {/* size selection */}
+            <SizeSelection pizza={pizza} size={size} setSize={setSize} />
+            {/* crust selection */}
             <CrustSelection crust={crust} setCrust={setCrust} />
             {/* toppings */}
             <div className='mb-4 text-xl font-semibold'>Choose topping</div>
@@ -95,18 +92,18 @@ const PizzaDetails = ({ pizza, setModal }) => {
             <div className='flex flex-1 flex-wrap gap-2 py-1 justify-center lg:justify-start'>
               {pizza.toppings?.map((topping, index) => {
                 return (
-                  // topping item
                   <Topping
                     topping={topping}
-                    key={index}
                     additionalTopping={additionalTopping}
                     setAdditionalTopping={setAdditionalTopping}
+                    key={index}
                   />
                 );
               })}
             </div>
           </div>
         </div>
+        {/* add to cart btn */}
         <div className='h-full flex items-center px-2 lg:items-end'>
           <button
             onClick={() => {

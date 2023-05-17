@@ -5,25 +5,23 @@ const CrustSelection = ({ crust, setCrust }) => {
       <div className='flex gap-x-12 mb-8 font-medium'>
         <label className='flex items-center gap-x-2 cursor-pointer'>
           <input
+            className='appearance-none w-4 h-4 border border-gray-400 rounded-full checked:bg-gradient-to-r checked:from-primary checked:to-secondary checked:border-secondary cursor-pointer'
             type='radio'
             name='crust'
             value='traditional'
             checked={crust === 'traditional'}
             onChange={(e) => setCrust(e.target.value)}
-            className='h-4 w-4 rounded-full border border-gray-400 appearance-none checked:bg-gradient-to-r checked:from-primary checked:to-secondary
-            checked:border-secondary cursor-pointer'
           />
           Traditional
         </label>
         <label className='flex items-center gap-x-2 cursor-pointer'>
           <input
+            className='appearance-none w-4 h-4 border border-gray-400 rounded-full checked:bg-gradient-to-r checked:from-primary checked:to-secondary checked:border-secondary cursor-pointer'
             type='radio'
             name='crust'
             value='thin'
             checked={crust === 'thin'}
             onChange={(e) => setCrust(e.target.value)}
-            className='h-4 w-4 rounded-full border border-gray-400 appearance-none checked:bg-gradient-to-r checked:from-primary checked:to-secondary
-            checked:border-secondary cursor-pointer'
           />
           Thin
         </label>

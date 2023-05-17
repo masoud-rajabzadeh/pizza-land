@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // next image
 import Image from 'next/image';
 // icons
@@ -8,10 +8,12 @@ const Topping = ({ topping, additionalTopping, setAdditionalTopping }) => {
   // checkbox state
   const [isChecked, setIsChecked] = useState(false);
 
-  const handleCheckboxChange = () => {
+  // handle checkbox
+  const handleCheckBox = () => {
     setIsChecked(!isChecked);
   };
 
+  // handle topping
   const handleTopping = () => {
     if (isChecked) {
       // use set to ensure unique values
@@ -34,7 +36,7 @@ const Topping = ({ topping, additionalTopping, setAdditionalTopping }) => {
     <div
       className={`${
         isChecked && 'border-orange'
-      } w-full max-w-[110px] h-[140px] p-1 flex flex-col items-center justify-center rounded-md bg-white border relative`}
+      } w-full max-w-[110px] h-[140px] p-1 flex flex-col items-center justify-center border rounded-md bg-white relative`}
     >
       <Image
         src={topping.image}
@@ -43,14 +45,16 @@ const Topping = ({ topping, additionalTopping, setAdditionalTopping }) => {
         alt=''
         className='mb-2'
       />
+      {/* topping name */}
       <div className='text-sm capitalize text-center font-medium'>
         {topping.name}
       </div>
+      {/* checkbox */}
       <input
         className='absolute w-full h-full opacity-0 cursor-pointer'
         type='checkbox'
         checked={isChecked}
-        onChange={handleCheckboxChange}
+        onChange={handleCheckBox}
       />
       {/* checkmark icon */}
       <div

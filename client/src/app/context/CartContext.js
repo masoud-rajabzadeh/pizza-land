@@ -1,16 +1,20 @@
 'use client';
+import React, { createContext, useEffect, useState } from 'react';
 
-import { createContext, useEffect, useState } from 'react';
 // create context
 export const CartContext = createContext();
 
 const CartProvider = ({ children }) => {
+  // cart open state
   const [isOpen, setIsOpen] = useState(false);
+  // cart state
   const [cart, setCart] = useState([]);
+  // cart total state
   const [cartTotal, setCartTotal] = useState(0);
+  // item amount state
   const [itemAmount, setItemAmount] = useState(0);
 
-  // item amount
+  // update item amount
   useEffect(() => {
     const amount = cart.reduce((a, c) => {
       return a + c.amount;
@@ -18,7 +22,7 @@ const CartProvider = ({ children }) => {
     setItemAmount(amount);
   });
 
-  // cart price
+  // update cart total price
   useEffect(() => {
     const price = cart.reduce((a, c) => {
       return a + Number(c.price) * c.amount;
@@ -68,7 +72,8 @@ const CartProvider = ({ children }) => {
       newCart[cartItemIndex].amount += 1;
       setCart(newCart);
     }
-    // open the cart
+
+    // open the cart everytime you add a product
     setIsOpen(true);
   };
 
@@ -77,7 +82,6 @@ const CartProvider = ({ children }) => {
     const itemIndex = cart.findIndex(
       (item) => item.id === id && item.price === price && item.crust === crust
     );
-
     if (itemIndex !== -1) {
       const newCart = [...cart];
       newCart.splice(itemIndex, 1);
@@ -113,25 +117,19 @@ const CartProvider = ({ children }) => {
     }
   };
 
-  // clear cart
-  // const clearCart = () => {
-  //   setCart([]);
-  // };
-
   return (
     <CartContext.Provider
       value={{
         isOpen,
         setIsOpen,
+        addToCart,
         cart,
         setCart,
-        addToCart,
         removeItem,
-        cartTotal,
         increaseAmount,
         decreaseAmount,
         itemAmount,
-        // clearCart,
+        cartTotal,
       }}
     >
       {children}
