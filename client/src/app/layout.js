@@ -27,6 +27,8 @@ const bangers = Bangers({
   weight: ['400'],
 });
 
+
+
 const robotoCondensed = Roboto_Condensed({
   subsets: ['latin'],
   variable: '--font-robotoCondensed',
