@@ -1,8 +1,6 @@
 // css
 import './globals.css';
 
-// add some comments
-
 // components
 import Nav from './components/Nav';
 import CartMobileIcon from './components/CartMobileIcon';
