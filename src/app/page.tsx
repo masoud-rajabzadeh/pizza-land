@@ -12,6 +12,7 @@ import CrustSelection from './components/CrustSelection';
 import Footer from './components/Footer';
 import Nav from './components/Nav';
 import Pizza from './components/Pizza';
+import PizzaDetails from './components/PizzaDetails';
 export default function Home() {
   return (
     <section>
@@ -27,6 +28,7 @@ export default function Home() {
       <Footer />
       <Nav />
       <Pizza />
+      <PizzaDetails />
       {pizzas.map((pizza) => (<div>{pizza.name}</div>))}
     </section>
   )
