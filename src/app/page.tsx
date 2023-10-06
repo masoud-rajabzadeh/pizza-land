@@ -9,6 +9,7 @@ import CartMobileIcon from './components/CartMobileIcon';
 import CartTop from './components/CartTop';
 import CheckoutDetails from './components/CheckoutDetails';
 import CrustSelection from './components/CrustSelection';
+import Footer from './components/Footer';
 export default function Home() {
   return (
     <section>
@@ -21,6 +22,7 @@ export default function Home() {
       <CartTop/>
       <CheckoutDetails />
       <CrustSelection/>
+      <Footer />
       {pizzas.map((pizza) => (<div>{pizza.name}</div>))}
     </section>
   )
