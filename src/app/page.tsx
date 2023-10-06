@@ -15,6 +15,7 @@ import Pizza from './components/Pizza';
 import PizzaDetails from './components/PizzaDetails';
 import SizeSelection from './components/SizeSelection';
 import Topping from './components/Topping';
+import { CartContext } from './components/context/CartContext';
 export default function Home() {
   return (
     <section>
@@ -33,6 +34,7 @@ export default function Home() {
       <PizzaDetails />
       <SizeSelection />
       <Topping/>
+      <CartContext />
       {pizzas.map((pizza) => (<div>{pizza.name}</div>))}
     </section>
   )
