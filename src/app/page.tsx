@@ -10,6 +10,7 @@ import CartTop from './components/CartTop';
 import CheckoutDetails from './components/CheckoutDetails';
 import CrustSelection from './components/CrustSelection';
 import Footer from './components/Footer';
+import Nav from './components/Nav';
 export default function Home() {
   return (
     <section>
@@ -23,6 +24,7 @@ export default function Home() {
       <CheckoutDetails />
       <CrustSelection/>
       <Footer />
+      <Nav />
       {pizzas.map((pizza) => (<div>{pizza.name}</div>))}
     </section>
   )
