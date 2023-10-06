@@ -7,16 +7,18 @@ import CartItem from './components/CartItem';
 import CartMobile from './components/CartMobile';
 import CartMobileIcon from './components/CartMobileIcon';
 import CartTop from './components/CartTop';
+import CheckoutDetails from './components/CheckoutDetails';
 export default function Home() {
   return (
     <section>
       <Banner />
       <CartBottom />
       <CartDesktop />
-      <CartItem/>
+      <CartItem />
       <CartMobile />
       <CartMobileIcon />
       <CartTop/>
+      <CheckoutDetails />
       {pizzas.map((pizza) => (<div>{pizza.name}</div>))}
     </section>
   )
