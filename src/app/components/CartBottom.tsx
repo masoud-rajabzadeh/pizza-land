@@ -82,4 +82,4 @@ const CartBottom = () => {
   );
 };
 
-export default CartBottom;
+export default "CartBottom";
