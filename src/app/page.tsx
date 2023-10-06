@@ -6,6 +6,7 @@ import CartDesktop from './components/CartDesktop'
 import CartItem from './components/CartItem';
 import CartMobile from './components/CartMobile';
 import CartMobileIcon from './components/CartMobileIcon';
+import CartTop from './components/CartTop';
 export default function Home() {
   return (
     <section>
@@ -15,6 +16,7 @@ export default function Home() {
       <CartItem/>
       <CartMobile />
       <CartMobileIcon />
+      <CartTop/>
       {pizzas.map((pizza) => (<div>{pizza.name}</div>))}
     </section>
   )
