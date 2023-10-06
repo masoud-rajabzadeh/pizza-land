@@ -14,6 +14,7 @@ import Nav from './components/Nav';
 import Pizza from './components/Pizza';
 import PizzaDetails from './components/PizzaDetails';
 import SizeSelection from './components/SizeSelection';
+import Topping from './components/Topping';
 export default function Home() {
   return (
     <section>
@@ -31,6 +32,7 @@ export default function Home() {
       <Pizza />
       <PizzaDetails />
       <SizeSelection />
+      <Topping/>
       {pizzas.map((pizza) => (<div>{pizza.name}</div>))}
     </section>
   )
